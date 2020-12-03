@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94832575257910BF008D1449 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832574257910BF008D1449 /* CartViewController.swift */; };
+		9483257A257910DF008D1449 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832579257910DF008D1449 /* ProductViewController.swift */; };
+		9483258825791633008D1449 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258725791633008D1449 /* LocationViewController.swift */; };
+		9483258D25791714008D1449 /* StringEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258C25791714008D1449 /* StringEnums.swift */; };
 		949ED42B25779BDB00FB69C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED42A25779BDB00FB69C3 /* AppDelegate.swift */; };
 		949ED42D25779BDB00FB69C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED42C25779BDB00FB69C3 /* SceneDelegate.swift */; };
-		949ED42F25779BDB00FB69C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED42E25779BDB00FB69C3 /* ViewController.swift */; };
 		949ED43225779BDB00FB69C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949ED43025779BDB00FB69C3 /* Main.storyboard */; };
 		949ED43425779BDC00FB69C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 949ED43325779BDC00FB69C3 /* Assets.xcassets */; };
 		949ED43725779BDC00FB69C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949ED43525779BDC00FB69C3 /* LaunchScreen.storyboard */; };
 		949ED44225779BDC00FB69C3 /* SweetShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED44125779BDC00FB69C3 /* SweetShopTests.swift */; };
 		949ED44D25779BDC00FB69C3 /* SweetShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED44C25779BDC00FB69C3 /* SweetShopUITests.swift */; };
-		94E9E2152577CD2A00CD5281 /* OfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2142577CD2A00CD5281 /* OfficeViewController.swift */; };
+		94E9E2152577CD2A00CD5281 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2142577CD2A00CD5281 /* UserViewController.swift */; };
 		94E9E21A2577D2EA00CD5281 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2192577D2EA00CD5281 /* MainViewController.swift */; };
 		94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */; };
 /* End PBXBuildFile section */
@@ -38,10 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94832574257910BF008D1449 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		94832579257910DF008D1449 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		9483258725791633008D1449 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		9483258C25791714008D1449 /* StringEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnums.swift; sourceTree = "<group>"; };
 		949ED42725779BDB00FB69C3 /* SweetShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweetShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949ED42A25779BDB00FB69C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		949ED42C25779BDB00FB69C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		949ED42E25779BDB00FB69C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		949ED43125779BDB00FB69C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		949ED43325779BDC00FB69C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		949ED43625779BDC00FB69C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +58,7 @@
 		949ED44825779BDC00FB69C3 /* SweetShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SweetShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		949ED44C25779BDC00FB69C3 /* SweetShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetShopUITests.swift; sourceTree = "<group>"; };
 		949ED44E25779BDC00FB69C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94E9E2142577CD2A00CD5281 /* OfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeViewController.swift; sourceTree = "<group>"; };
+		94E9E2142577CD2A00CD5281 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		94E9E2192577D2EA00CD5281 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNamePrintable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,14 +113,17 @@
 			children = (
 				949ED42A25779BDB00FB69C3 /* AppDelegate.swift */,
 				949ED42C25779BDB00FB69C3 /* SceneDelegate.swift */,
+				9483258725791633008D1449 /* LocationViewController.swift */,
 				94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */,
 				94E9E2192577D2EA00CD5281 /* MainViewController.swift */,
-				94E9E2142577CD2A00CD5281 /* OfficeViewController.swift */,
-				949ED42E25779BDB00FB69C3 /* ViewController.swift */,
+				94E9E2142577CD2A00CD5281 /* UserViewController.swift */,
 				949ED43025779BDB00FB69C3 /* Main.storyboard */,
 				949ED43325779BDC00FB69C3 /* Assets.xcassets */,
 				949ED43525779BDC00FB69C3 /* LaunchScreen.storyboard */,
 				949ED43825779BDC00FB69C3 /* Info.plist */,
+				94832574257910BF008D1449 /* CartViewController.swift */,
+				94832579257910DF008D1449 /* ProductViewController.swift */,
+				9483258C25791714008D1449 /* StringEnums.swift */,
 			);
 			path = SweetShop;
 			sourceTree = "<group>";
@@ -267,12 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E9E2152577CD2A00CD5281 /* OfficeViewController.swift in Sources */,
-				949ED42F25779BDB00FB69C3 /* ViewController.swift in Sources */,
+				94E9E2152577CD2A00CD5281 /* UserViewController.swift in Sources */,
 				949ED42B25779BDB00FB69C3 /* AppDelegate.swift in Sources */,
+				94832575257910BF008D1449 /* CartViewController.swift in Sources */,
 				949ED42D25779BDB00FB69C3 /* SceneDelegate.swift in Sources */,
 				94E9E21A2577D2EA00CD5281 /* MainViewController.swift in Sources */,
+				9483258D25791714008D1449 /* StringEnums.swift in Sources */,
+				9483257A257910DF008D1449 /* ProductViewController.swift in Sources */,
 				94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */,
+				9483258825791633008D1449 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

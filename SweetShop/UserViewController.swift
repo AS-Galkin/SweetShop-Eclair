@@ -7,13 +7,10 @@
 
 import UIKit
 
-class OfficeViewController: UIViewController{
+class UserViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Кабинет"
-        view.backgroundColor = .white
     }
     
 
