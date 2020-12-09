@@ -10,6 +10,8 @@ import UIKit
 class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function+"LocationView")
+        
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -17,10 +19,9 @@ class LocationViewController: UIViewController {
         showCartVC()
     }
     func showCartVC() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: Icons.userIcon.rawValue), style: .done, target: self, action: #selector(showCartVCHandler(sender:)))
     }
     
     @objc func showCartVCHandler(sender: UIBarButtonItem) {
-        self.tabBarController?.show(CartViewController(), sender: self)
+        print(self.tabBarController?.selectedViewController?.typeName)
     }
 }
