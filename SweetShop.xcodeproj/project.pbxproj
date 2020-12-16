@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		946232702583BDAF005EA0AD /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462326F2583BDAF005EA0AD /* CategoryData.swift */; };
+		946232782583BE1A005EA0AD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946232772583BE1A005EA0AD /* MainViewModel.swift */; };
+		9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462327C2583BF3C005EA0AD /* DataStates.swift */; };
+		9462328E2583C2A0005EA0AD /* Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462328D2583C2A0005EA0AD /* Downloadable.swift */; };
+		947D50552582B51400BD1871 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50542582B51400BD1871 /* CategoryCollectionView.swift */; };
+		947D505A2582B98D00BD1871 /* MainSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50592582B98D00BD1871 /* MainSearchBar.swift */; };
+		947D50672582BD4800BD1871 /* ExtensionMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50662582BD4800BD1871 /* ExtensionMainViewController.swift */; };
 		94832575257910BF008D1449 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832574257910BF008D1449 /* CartViewController.swift */; };
 		9483257A257910DF008D1449 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832579257910DF008D1449 /* ProductViewController.swift */; };
 		9483258825791633008D1449 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258725791633008D1449 /* LocationViewController.swift */; };
@@ -45,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9462326F2583BDAF005EA0AD /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
+		946232772583BE1A005EA0AD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9462327C2583BF3C005EA0AD /* DataStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStates.swift; sourceTree = "<group>"; };
+		9462328D2583C2A0005EA0AD /* Downloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloadable.swift; sourceTree = "<group>"; };
+		947D50542582B51400BD1871 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
+		947D50592582B98D00BD1871 /* MainSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchBar.swift; sourceTree = "<group>"; };
+		947D50662582BD4800BD1871 /* ExtensionMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMainViewController.swift; sourceTree = "<group>"; };
 		94832574257910BF008D1449 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		94832579257910DF008D1449 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		9483258725791633008D1449 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +255,10 @@
 				94F053F3257A48CC008A598F /* NavigationViewController.swift */,
 				94F053E3257A4772008A598F /* TabBarController.swift */,
 				94E9E2192577D2EA00CD5281 /* MainViewController.swift */,
+				947D50662582BD4800BD1871 /* ExtensionMainViewController.swift */,
+				947D50542582B51400BD1871 /* CategoryCollectionView.swift */,
 				949148AB257F8B2200498A87 /* CategoryCollectionViewCell.swift */,
+				947D50592582B98D00BD1871 /* MainSearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +266,7 @@
 		946F03C325816A2E00D8DF86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9462326F2583BDAF005EA0AD /* CategoryData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +274,7 @@
 		946F03C425816A3100D8DF86 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				946232772583BE1A005EA0AD /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */,
+				9462328D2583C2A0005EA0AD /* Downloadable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -272,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				9483258C25791714008D1449 /* StringEnums.swift */,
+				9462327C2583BF3C005EA0AD /* DataStates.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -479,12 +500,19 @@
 				94F053E4257A4772008A598F /* TabBarController.swift in Sources */,
 				949ED42D25779BDB00FB69C3 /* SceneDelegate.swift in Sources */,
 				949148AC257F8B2200498A87 /* CategoryCollectionViewCell.swift in Sources */,
+				947D50672582BD4800BD1871 /* ExtensionMainViewController.swift in Sources */,
+				9462328E2583C2A0005EA0AD /* Downloadable.swift in Sources */,
+				9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */,
 				949148A3257F69B000498A87 /* SettingUserViewController.swift in Sources */,
+				947D50552582B51400BD1871 /* CategoryCollectionView.swift in Sources */,
 				94E9E21A2577D2EA00CD5281 /* MainViewController.swift in Sources */,
+				946232702583BDAF005EA0AD /* CategoryData.swift in Sources */,
 				9483258D25791714008D1449 /* StringEnums.swift in Sources */,
 				9483257A257910DF008D1449 /* ProductViewController.swift in Sources */,
 				94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */,
 				9483258825791633008D1449 /* LocationViewController.swift in Sources */,
+				947D505A2582B98D00BD1871 /* MainSearchBar.swift in Sources */,
+				946232782583BE1A005EA0AD /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

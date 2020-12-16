@@ -32,6 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.setViewControllers(navViewControllerArray, animated: false)
         
         window?.rootViewController = tabBarController
+//        print(tabBarController.tabBar.frame)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

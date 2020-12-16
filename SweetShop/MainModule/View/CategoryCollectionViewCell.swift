@@ -18,14 +18,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         contentView.addSubview(label)
-        label.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        label.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        label.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        createConstraintCell()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        
     }
     
     fileprivate var label: UILabel = {
@@ -37,4 +35,11 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         lable.font = UIFont.systemFont(ofSize: 15)
         return lable
     }()
+    
+    func createConstraintCell() {
+        label.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        label.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        label.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+    }
 }
