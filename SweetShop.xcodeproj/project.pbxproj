@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		946156562589DC2C00037425 /* MainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946156552589DC2C00037425 /* MainScrollView.swift */; };
 		946232702583BDAF005EA0AD /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462326F2583BDAF005EA0AD /* CategoryData.swift */; };
 		946232782583BE1A005EA0AD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946232772583BE1A005EA0AD /* MainViewModel.swift */; };
 		9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462327C2583BF3C005EA0AD /* DataStates.swift */; };
@@ -27,6 +28,7 @@
 		949ED43725779BDC00FB69C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949ED43525779BDC00FB69C3 /* LaunchScreen.storyboard */; };
 		949ED44225779BDC00FB69C3 /* SweetShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED44125779BDC00FB69C3 /* SweetShopTests.swift */; };
 		949ED44D25779BDC00FB69C3 /* SweetShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED44C25779BDC00FB69C3 /* SweetShopUITests.swift */; };
+		94C41604258B66DD0097FC1C /* BunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C41603258B66DD0097FC1C /* BunnerView.swift */; };
 		94E9E2152577CD2A00CD5281 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2142577CD2A00CD5281 /* UserViewController.swift */; };
 		94E9E21A2577D2EA00CD5281 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2192577D2EA00CD5281 /* MainViewController.swift */; };
 		94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */; };
@@ -52,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		946156552589DC2C00037425 /* MainScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScrollView.swift; sourceTree = "<group>"; };
 		9462326F2583BDAF005EA0AD /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		946232772583BE1A005EA0AD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9462327C2583BF3C005EA0AD /* DataStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStates.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		949ED44825779BDC00FB69C3 /* SweetShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SweetShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		949ED44C25779BDC00FB69C3 /* SweetShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetShopUITests.swift; sourceTree = "<group>"; };
 		949ED44E25779BDC00FB69C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94C41603258B66DD0097FC1C /* BunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunnerView.swift; sourceTree = "<group>"; };
 		94E9E2142577CD2A00CD5281 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		94E9E2192577D2EA00CD5281 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNamePrintable.swift; sourceTree = "<group>"; };
@@ -110,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		943718F4258B3B6E00080551 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				94F053F3257A48CC008A598F /* NavigationViewController.swift */,
+				94E9E2192577D2EA00CD5281 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		946F03B12581699600D8DF86 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,9 +265,10 @@
 		946F03C225816A2B00D8DF86 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94F053F3257A48CC008A598F /* NavigationViewController.swift */,
+				943718F4258B3B6E00080551 /* ViewController */,
 				94F053E3257A4772008A598F /* TabBarController.swift */,
-				94E9E2192577D2EA00CD5281 /* MainViewController.swift */,
+				946156552589DC2C00037425 /* MainScrollView.swift */,
+				94C41603258B66DD0097FC1C /* BunnerView.swift */,
 				947D50662582BD4800BD1871 /* ExtensionMainViewController.swift */,
 				947D50542582B51400BD1871 /* CategoryCollectionView.swift */,
 				949148AB257F8B2200498A87 /* CategoryCollectionViewCell.swift */,
@@ -501,6 +515,8 @@
 				949ED42D25779BDB00FB69C3 /* SceneDelegate.swift in Sources */,
 				949148AC257F8B2200498A87 /* CategoryCollectionViewCell.swift in Sources */,
 				947D50672582BD4800BD1871 /* ExtensionMainViewController.swift in Sources */,
+				94C41604258B66DD0097FC1C /* BunnerView.swift in Sources */,
+				946156562589DC2C00037425 /* MainScrollView.swift in Sources */,
 				9462328E2583C2A0005EA0AD /* Downloadable.swift in Sources */,
 				9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */,
 				949148A3257F69B000498A87 /* SettingUserViewController.swift in Sources */,

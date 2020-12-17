@@ -27,13 +27,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate var label: UILabel = {
-        let lable = UILabel()
-        lable.clipsToBounds = true
-        lable.backgroundColor = .red
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        lable.textColor = .black
-        lable.font = UIFont.systemFont(ofSize: 15)
-        return lable
+        let label = UILabel()
+        label.clipsToBounds = true
+        label.backgroundColor = .red
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 15)
+        return label
     }()
     
     func createConstraintCell() {
