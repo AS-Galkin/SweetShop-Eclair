@@ -31,6 +31,7 @@ extension MainViewController {
         categoryCollectionView.topAnchor.constraint(equalTo: bunnerView.bottomAnchor, constant: 5.0).isActive = true
         categoryCollectionView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor, constant: 5.0).isActive = true
         categoryCollectionView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: getTabBarHeigt()).isActive = true
+        categoryCollectionView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor).isActive = true
     }
     
     //MARK: - Bind delegate to SearchBar
@@ -40,7 +41,6 @@ extension MainViewController {
     
     //MARK: - Make constarints for SearchBar
     func makeConstrainstMainSearchBar() {
-        mainSearchBar.frame.size.height = 60
         mainSearchBar.centerXAnchor.constraint(equalTo: mainScrollView.centerXAnchor).isActive = true
         mainSearchBar.topAnchor.constraint(equalTo: mainScrollView.topAnchor, constant: 5.0).isActive = true
         mainSearchBar.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor, constant: 5.0).isActive = true
@@ -65,7 +65,8 @@ extension MainViewController {
         bunnerView.centerXAnchor.constraint(equalTo: mainScrollView.centerXAnchor).isActive = true
         bunnerView.topAnchor.constraint(equalTo: mainSearchBar.bottomAnchor, constant: 5.0).isActive = true
         bunnerView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor, constant: 5.0).isActive = true
-        bunnerView.bottomAnchor.constraint(equalTo: bunnerView.topAnchor, constant: 100).isActive = true
+        //bunnerView.bottomAnchor.constraint(equalTo: bunnerView.topAnchor, constant: 100).isActive = true
+        bunnerView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 3).isActive = true
     }
 }
 

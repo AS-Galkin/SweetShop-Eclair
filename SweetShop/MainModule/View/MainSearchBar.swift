@@ -16,6 +16,7 @@ class MainSearchBar: UISearchBar {
         barStyle = .default
         showsSearchResultsButton = true
         translatesAutoresizingMaskIntoConstraints = false
+        //searchTextField.frame.size.height = 170
     }
     
     required init?(coder: NSCoder) {
