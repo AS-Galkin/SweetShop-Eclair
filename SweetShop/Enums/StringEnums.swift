@@ -8,22 +8,30 @@
 import UIKit
 
 enum Titles: String, CaseIterable {
-    case mainTitle = "Главная"
+    case categoryTitle = "Главная"
     case userTitle = "Личный кабинет"
     case cartTitle = "Корзина"
     case locationTitle = "Адреса"
     static var allCases: [Titles] {
-        return [mainTitle, userTitle, cartTitle, locationTitle]
+        return [categoryTitle, userTitle, cartTitle, locationTitle]
     }
 }
 
 enum Icons: String {
-    case mainIcon = "main_icon"
+    case categoryIcon = "category_icon"
     case userIcon = "user_icon"
     case cartIcon = "cart_icon"
     case locationIcon = "location_icon"
     case settingsIcon = "settings"
-    static var tabBarCases: [Icons] {
-        return [mainIcon, userIcon, cartIcon, locationIcon]
+    static var allCases: [Icons] {
+        return [categoryIcon, userIcon, cartIcon, locationIcon]
     }
+}
+
+enum DatabaseImagePath: String {
+    case imageParentPath = "/"
+}
+
+enum URLString: String {
+    case requestAbsolutePath = "http://10.2.255.100/"
 }

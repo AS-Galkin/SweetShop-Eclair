@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941A8B6F2592007E00E69CEE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B6E2592007E00E69CEE /* Network.swift */; };
+		941A8B89259205EB00E69CEE /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B88259205EB00E69CEE /* ErrorCode.swift */; };
+		941A8B8E2592245100E69CEE /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B8D2592245100E69CEE /* ViewModelProtocol.swift */; };
+		941A8B932592285500E69CEE /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B922592285500E69CEE /* CategoryViewModel.swift */; };
+		941A8B9B259229D800E69CEE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B9A259229D800E69CEE /* CategoryView.swift */; };
+		941A8BAC25923BCC00E69CEE /* ExtensionCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8BAB25923BCC00E69CEE /* ExtensionCategoryView.swift */; };
 		946156562589DC2C00037425 /* MainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946156552589DC2C00037425 /* MainScrollView.swift */; };
 		946232702583BDAF005EA0AD /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462326F2583BDAF005EA0AD /* CategoryData.swift */; };
-		946232782583BE1A005EA0AD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946232772583BE1A005EA0AD /* MainViewModel.swift */; };
 		9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462327C2583BF3C005EA0AD /* DataStates.swift */; };
 		9462328E2583C2A0005EA0AD /* Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462328D2583C2A0005EA0AD /* Downloadable.swift */; };
 		947D50552582B51400BD1871 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50542582B51400BD1871 /* CategoryCollectionView.swift */; };
 		947D505A2582B98D00BD1871 /* MainSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50592582B98D00BD1871 /* MainSearchBar.swift */; };
-		947D50672582BD4800BD1871 /* ExtensionMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50662582BD4800BD1871 /* ExtensionMainViewController.swift */; };
+		947D50672582BD4800BD1871 /* ExtensionCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50662582BD4800BD1871 /* ExtensionCategoryViewController.swift */; };
 		94832575257910BF008D1449 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832574257910BF008D1449 /* CartViewController.swift */; };
 		9483257A257910DF008D1449 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832579257910DF008D1449 /* ProductViewController.swift */; };
 		9483258825791633008D1449 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258725791633008D1449 /* LocationViewController.swift */; };
@@ -30,7 +35,7 @@
 		949ED44D25779BDC00FB69C3 /* SweetShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED44C25779BDC00FB69C3 /* SweetShopUITests.swift */; };
 		94C41604258B66DD0097FC1C /* BunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C41603258B66DD0097FC1C /* BunnerView.swift */; };
 		94E9E2152577CD2A00CD5281 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2142577CD2A00CD5281 /* UserViewController.swift */; };
-		94E9E21A2577D2EA00CD5281 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2192577D2EA00CD5281 /* MainViewController.swift */; };
+		94E9E21A2577D2EA00CD5281 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E2192577D2EA00CD5281 /* CategoryViewController.swift */; };
 		94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */; };
 		94F053E4257A4772008A598F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F053E3257A4772008A598F /* TabBarController.swift */; };
 		94F053F4257A48CC008A598F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F053F3257A48CC008A598F /* NavigationViewController.swift */; };
@@ -54,14 +59,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		941A8B6E2592007E00E69CEE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		941A8B88259205EB00E69CEE /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		941A8B8D2592245100E69CEE /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		941A8B922592285500E69CEE /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		941A8B9A259229D800E69CEE /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		941A8BAB25923BCC00E69CEE /* ExtensionCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCategoryView.swift; sourceTree = "<group>"; };
 		946156552589DC2C00037425 /* MainScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScrollView.swift; sourceTree = "<group>"; };
 		9462326F2583BDAF005EA0AD /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
-		946232772583BE1A005EA0AD /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		9462327C2583BF3C005EA0AD /* DataStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStates.swift; sourceTree = "<group>"; };
 		9462328D2583C2A0005EA0AD /* Downloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloadable.swift; sourceTree = "<group>"; };
 		947D50542582B51400BD1871 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		947D50592582B98D00BD1871 /* MainSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchBar.swift; sourceTree = "<group>"; };
-		947D50662582BD4800BD1871 /* ExtensionMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMainViewController.swift; sourceTree = "<group>"; };
+		947D50662582BD4800BD1871 /* ExtensionCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCategoryViewController.swift; sourceTree = "<group>"; };
 		94832574257910BF008D1449 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		94832579257910DF008D1449 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		9483258725791633008D1449 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +93,7 @@
 		949ED44E25779BDC00FB69C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C41603258B66DD0097FC1C /* BunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunnerView.swift; sourceTree = "<group>"; };
 		94E9E2142577CD2A00CD5281 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		94E9E2192577D2EA00CD5281 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		94E9E2192577D2EA00CD5281 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNamePrintable.swift; sourceTree = "<group>"; };
 		94F053E3257A4772008A598F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		94F053F3257A48CC008A598F /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -114,11 +124,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941A8B84259204C600E69CEE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				941A8B6E2592007E00E69CEE /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		943718F4258B3B6E00080551 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				94F053F3257A48CC008A598F /* NavigationViewController.swift */,
-				94E9E2192577D2EA00CD5281 /* MainViewController.swift */,
+				94E9E2192577D2EA00CD5281 /* CategoryViewController.swift */,
+				947D50662582BD4800BD1871 /* ExtensionCategoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -126,6 +145,7 @@
 		946F03B12581699600D8DF86 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				943718F4258B3B6E00080551 /* ViewController */,
 				946F03C425816A3100D8DF86 /* ViewModel */,
 				946F03C325816A2E00D8DF86 /* Model */,
 				946F03C225816A2B00D8DF86 /* View */,
@@ -265,11 +285,11 @@
 		946F03C225816A2B00D8DF86 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				943718F4258B3B6E00080551 /* ViewController */,
+				941A8B9A259229D800E69CEE /* CategoryView.swift */,
+				941A8BAB25923BCC00E69CEE /* ExtensionCategoryView.swift */,
 				94F053E3257A4772008A598F /* TabBarController.swift */,
 				946156552589DC2C00037425 /* MainScrollView.swift */,
 				94C41603258B66DD0097FC1C /* BunnerView.swift */,
-				947D50662582BD4800BD1871 /* ExtensionMainViewController.swift */,
 				947D50542582B51400BD1871 /* CategoryCollectionView.swift */,
 				949148AB257F8B2200498A87 /* CategoryCollectionViewCell.swift */,
 				947D50592582B98D00BD1871 /* MainSearchBar.swift */,
@@ -288,7 +308,7 @@
 		946F03C425816A3100D8DF86 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				946232772583BE1A005EA0AD /* MainViewModel.swift */,
+				941A8B922592285500E69CEE /* CategoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -298,6 +318,7 @@
 			children = (
 				94E9E21E2577DAB800CD5281 /* ClassNamePrintable.swift */,
 				9462328D2583C2A0005EA0AD /* Downloadable.swift */,
+				941A8B8D2592245100E69CEE /* ViewModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -307,6 +328,7 @@
 			children = (
 				9483258C25791714008D1449 /* StringEnums.swift */,
 				9462327C2583BF3C005EA0AD /* DataStates.swift */,
+				941A8B88259205EB00E69CEE /* ErrorCode.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -343,6 +365,7 @@
 		949ED42925779BDB00FB69C3 /* SweetShop */ = {
 			isa = PBXGroup;
 			children = (
+				941A8B84259204C600E69CEE /* Network */,
 				946F03C725816AD900D8DF86 /* Delegates */,
 				946F03C625816ACA00D8DF86 /* Enums */,
 				946F03C525816AA700D8DF86 /* Protocols */,
@@ -509,26 +532,31 @@
 			files = (
 				94E9E2152577CD2A00CD5281 /* UserViewController.swift in Sources */,
 				94F053F4257A48CC008A598F /* NavigationViewController.swift in Sources */,
+				941A8B6F2592007E00E69CEE /* Network.swift in Sources */,
 				949ED42B25779BDB00FB69C3 /* AppDelegate.swift in Sources */,
 				94832575257910BF008D1449 /* CartViewController.swift in Sources */,
 				94F053E4257A4772008A598F /* TabBarController.swift in Sources */,
+				941A8B8E2592245100E69CEE /* ViewModelProtocol.swift in Sources */,
 				949ED42D25779BDB00FB69C3 /* SceneDelegate.swift in Sources */,
 				949148AC257F8B2200498A87 /* CategoryCollectionViewCell.swift in Sources */,
-				947D50672582BD4800BD1871 /* ExtensionMainViewController.swift in Sources */,
+				947D50672582BD4800BD1871 /* ExtensionCategoryViewController.swift in Sources */,
 				94C41604258B66DD0097FC1C /* BunnerView.swift in Sources */,
 				946156562589DC2C00037425 /* MainScrollView.swift in Sources */,
 				9462328E2583C2A0005EA0AD /* Downloadable.swift in Sources */,
 				9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */,
 				949148A3257F69B000498A87 /* SettingUserViewController.swift in Sources */,
 				947D50552582B51400BD1871 /* CategoryCollectionView.swift in Sources */,
-				94E9E21A2577D2EA00CD5281 /* MainViewController.swift in Sources */,
+				94E9E21A2577D2EA00CD5281 /* CategoryViewController.swift in Sources */,
 				946232702583BDAF005EA0AD /* CategoryData.swift in Sources */,
 				9483258D25791714008D1449 /* StringEnums.swift in Sources */,
 				9483257A257910DF008D1449 /* ProductViewController.swift in Sources */,
 				94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */,
+				941A8BAC25923BCC00E69CEE /* ExtensionCategoryView.swift in Sources */,
 				9483258825791633008D1449 /* LocationViewController.swift in Sources */,
 				947D505A2582B98D00BD1871 /* MainSearchBar.swift in Sources */,
-				946232782583BE1A005EA0AD /* MainViewModel.swift in Sources */,
+				941A8B932592285500E69CEE /* CategoryViewModel.swift in Sources */,
+				941A8B89259205EB00E69CEE /* ErrorCode.swift in Sources */,
+				941A8B9B259229D800E69CEE /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

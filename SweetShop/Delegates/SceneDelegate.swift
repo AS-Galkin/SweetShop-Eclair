@@ -19,14 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let userViewController: UserViewController = UserViewController()
-        let mainViewController: MainViewController = MainViewController()
+        let categoryViewController: CategoryViewController = CategoryViewController()
         let cartViewController: CartViewController = CartViewController()
         let locationViewController: LocationViewController = LocationViewController()
-        let viewControllerArray: [UIViewController] = [mainViewController, locationViewController, cartViewController, userViewController]
+        let viewControllerArray: [UIViewController] = [categoryViewController, locationViewController, cartViewController, userViewController]
         
         setTabBarItem(viewControllerArray: viewControllerArray)
         
         let navViewControllerArray: [NavigationViewController] = coverToNavController(viewControllerArray)
+        
         let tabBarController: TabBarController =  TabBarController()
         
         tabBarController.setViewControllers(navViewControllerArray, animated: false)
@@ -78,14 +79,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     //MARK: - Создаем BarBitemItem
     func setTabBarItem(viewControllerArray: [UIViewController]) {
+        
         for viewController in viewControllerArray {
-            for index in 0..<Icons.tabBarCases.count {
+            print(viewController.typeName)
+            for index in 0..<viewControllerArray.count {
                 //MARK: - Создаем подстроку
-                let start = Icons.tabBarCases[index].rawValue.startIndex
-                let end = Icons.tabBarCases[index].rawValue.index(Icons.tabBarCases[index].rawValue.endIndex, offsetBy: -5)
-                if(viewController.typeName.contains(String(Icons.tabBarCases[index].rawValue[start..<end]).capitalized)) {
-                    
-                    viewController.tabBarItem = UITabBarItem(title: Titles.allCases[index].rawValue, image: UIImage(named:Icons.tabBarCases[index].rawValue), selectedImage: nil)
+                let start = Icons.allCases[index].rawValue.startIndex
+                let end = Icons.allCases[index].rawValue.index(Icons.allCases[index].rawValue.endIndex, offsetBy: -5)
+                
+                if(viewController.typeName.contains(String(Icons.allCases[index].rawValue[start..<end]).capitalized)) {
+                    viewController.tabBarItem = UITabBarItem(title: Titles.allCases[index].rawValue, image: UIImage(named:Icons.allCases[index].rawValue), selectedImage: nil)
                     viewController.title = Titles.allCases[index].rawValue
                     viewController.tabBarItem.badgeColor = .brown
                     viewController.view.backgroundColor = .cyan
