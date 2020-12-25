@@ -22,7 +22,7 @@ class MainScrollView: UIScrollView {
         let scrollRect = UIScreen.main.bounds
         self.showsVerticalScrollIndicator = false
         self.contentSize = CGSize(width: scrollRect.width, height: scrollRect.height)
-        self.backgroundColor = .magenta
+        self.backgroundColor = UIColor(white: 1, alpha: 0)
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

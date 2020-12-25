@@ -20,10 +20,12 @@ class CategoryViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel = CategoryViewModel()
+        
         downloadJsonData()
+        
         tabBarItem.image = UIImage(named: Icons.categoryIcon.rawValue)
         navigationItem.title = "Главная"
-        
+       
         bindMainScrollView()
         bindMainSearchBar()
         bindCollectionView()
@@ -31,13 +33,8 @@ class CategoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        downloadJsonData()
-        
+        updateCategoryView()
     }
-    
-    func downloadJsonData() {
-        let param = ["all":"","table":"Category"]
-        viewModel.downloadJson(parameters: param, url: "http://10.2.255.100/api/getDataFromDB.php")
-    }
+
 }
 

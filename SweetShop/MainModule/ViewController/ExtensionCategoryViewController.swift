@@ -9,6 +9,24 @@ import UIKit
 
 extension CategoryViewController {
     
+    //MARK: - CONNECTION
+    func downloadJsonData() {
+        let param = ["all":"","table":"Category"]
+        viewModel.downloadJson(parameters: param, url: URIString.localURL.rawValue + URIString.apiGetDataURN.rawValue)
+    }
+    
+    //MARK: - Method to run update View
+    
+    func updateCategoryView() {
+        viewModel.updateData = { [weak self] viewData in
+            self?.typeCastView().viewData = viewData
+        }
+        
+        viewModel.updateImage = {[weak self] viewImages in
+            self?.typeCastView().viewImages = viewImages
+        }
+    }
+    
     //MARK: - Cast of type UIView
     func typeCastView() -> CategoryView {
         return self.view as! CategoryView
@@ -23,46 +41,31 @@ extension CategoryViewController {
     func bindCollectionView() {
         self.typeCastView().categoryCollectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
         self.typeCastView().categoryCollectionView.delegate = self
-        self.typeCastView().categoryCollectionView.dataSource = self
     }
     
     //MARK: - Bind delegate for scrollView
     func bindMainScrollView() {
         self.typeCastView().mainScrollView.delegate = self
     }
+    
+    //MARK: - Cell collectionview tap behavior
+    func cellButtonhandler(cell: UICollectionView) {
+        //let 
+    }
 }
 
-extension CategoryViewController: UICollectionViewDataSource {
-    
-    //MARK: - Return how many cell ColectionView will have
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9 // How many cells to display
-    }
-    
-    //MARK: - Setting each cell
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as? CategoryCollectionViewCell {
-            myCell.backgroundColor = .red
-            myCell.data = "sfsfsf"
-            return myCell
-        } else {
-            let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
-            myCell.backgroundColor = .red
-            return myCell
-        }
-    }
-}
+
 
 extension CategoryViewController: UICollectionViewDelegate {
  
     //MARK: - Setting Size for each cell
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.height/2)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.height/2)
+//    }
     
     //MARK: - Setting selector for each cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       print("User tapped on item \(indexPath.row)")
+       cellButtonhandler(cell: collectionView)
     }
 }
 
@@ -73,4 +76,3 @@ extension CategoryViewController: UISearchBarDelegate {
 extension CategoryViewController: UIScrollViewDelegate {
     
 }
-

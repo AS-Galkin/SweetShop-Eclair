@@ -28,10 +28,4 @@ enum Icons: String {
     }
 }
 
-enum DatabaseImagePath: String {
-    case imageParentPath = "/"
-}
 
-enum URLString: String {
-    case requestAbsolutePath = "http://10.2.255.100/"
-}

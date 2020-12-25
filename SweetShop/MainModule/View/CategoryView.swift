@@ -13,6 +13,19 @@ final class CategoryView: UIView {
     internal lazy var mainSearchBar = MainSearchBar()
     internal lazy var mainScrollView = MainScrollView()
     internal lazy var bunnerView = BunnerView()
+    internal lazy var dataForUpdate: [CategoryData.Data] = []
+    var viewImages: [UIImage] = [] {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    
+    var viewData: DataStates<[CategoryData.Data]> = .initial {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     
     
     override init(frame: CGRect) {
@@ -23,10 +36,9 @@ final class CategoryView: UIView {
         addSubview(mainScrollView)
    
         mainScrollView.addSubview(mainSearchBar)
-        
         mainScrollView.addSubview(bunnerView)
-
         mainScrollView.addSubview(categoryCollectionView)
+        
         
         
         makeConstraintsScrollView()
@@ -39,29 +51,19 @@ final class CategoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var viewData: DataStates<CategoryData.Data> = .initial {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         switch viewData {
         case .initial:
             print("INITIAL STATE")
-            update(viewData: nil)
             break
         case .success(let result):
-            update(viewData: result)
-        case .loading(_):
+            dataForUpdate = result
+            categoryCollectionView.dataSource = self
+        case .loading(let result):
             break
-        case .failure(_):
+        case .failure(let result):
             break
         }
-    }
-    
-    func update(viewData: CategoryData.Data?) {
-        print(viewData ?? "NIL")
     }
 }

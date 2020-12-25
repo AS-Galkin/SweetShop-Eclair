@@ -13,13 +13,14 @@ class CategoryCollectionView: UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: UIScreen.main.bounds.width/2 - 10)
+        layout.minimumInteritemSpacing = 5.0
         return layout
     }()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: .zero, collectionViewLayout: self.collectionLayout)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.green
+        backgroundColor = UIColor(white: 1, alpha: 0)
     }
     
     required init?(coder: NSCoder) {

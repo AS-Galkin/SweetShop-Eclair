@@ -13,6 +13,10 @@ class BunnerView: UIView {
         super.init(frame: .zero)
         backgroundColor = .brown
         translatesAutoresizingMaskIntoConstraints = false
+        layer.cornerRadius = 10.0
+        layer.borderWidth = 0.0
+        layer.masksToBounds = true
+        
     }
     
     required init?(coder: NSCoder) {

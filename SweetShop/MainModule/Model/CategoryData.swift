@@ -11,18 +11,18 @@ enum CategoryData: DataStatesProtocol {
     
     typealias Nested = DataStates<Data>
     
-    internal struct Data {
-        var id: String?
+    internal struct Data: Decodable {
+        var id: Int?
         var name: String?
         var description: String?
         var image: String?
     }
 }
 
-class CategoryModel {
-    weak var delegate: Downloadable?
-    
-}
+//class CategoryModel {
+//    weak var delegate: Downloadable?
+//    
+//}
 
 //extension Category {
 //    func getAllProperties() throws -> [String: Any] {
