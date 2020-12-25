@@ -9,11 +9,16 @@ import UIKit
 
 class ProductViewController: UIViewController {
 
+    var selectedProduct: ProductModel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func loadView() {
+        self.view = ProductView()
     }
 
 }

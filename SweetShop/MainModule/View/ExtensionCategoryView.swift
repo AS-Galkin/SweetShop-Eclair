@@ -67,13 +67,12 @@ extension CategoryView: UICollectionViewDataSource {
     
     //MARK: - Setting each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as? CategoryCollectionViewCell {
-            //myCell.image = try? UIImage(data: Data(contentsOf: URL(string: URLString.requestAbsolutePathLocal.rawValue + dataForUpdate[indexPath.row].image!)!))
+        if let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as? CategoryCollectionViewCell {
             myCell.image = viewImages[indexPath.row]
             myCell.label = dataForUpdate[indexPath.row].name
             return myCell
         } else {
-            let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
+            let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath)
             return myCell
         }
     }

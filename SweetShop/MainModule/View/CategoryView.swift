@@ -13,7 +13,7 @@ final class CategoryView: UIView {
     internal lazy var mainSearchBar = MainSearchBar()
     internal lazy var mainScrollView = MainScrollView()
     internal lazy var bunnerView = BunnerView()
-    internal lazy var dataForUpdate: [CategoryData.Data] = []
+    internal lazy var dataForUpdate: [CategoryModel.CategoryData] = []
     var viewImages: [UIImage] = [] {
         didSet {
             setNeedsLayout()
@@ -21,7 +21,7 @@ final class CategoryView: UIView {
     }
     
     
-    var viewData: DataStates<[CategoryData.Data]> = .initial {
+    var viewData: DataStates<[CategoryModel.CategoryData]> = .initial {
         didSet {
             setNeedsLayout()
         }

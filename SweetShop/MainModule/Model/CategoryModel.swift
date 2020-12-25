@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum CategoryData: DataStatesProtocol {
+enum CategoryModel: DataStatesProtocol {
     
-    typealias Nested = DataStates<Data>
+    typealias Nested = DataStates<CategoryData>
     
-    internal struct Data: Decodable {
+    internal struct CategoryData: Decodable {
         var id: Int?
         var name: String?
         var description: String?

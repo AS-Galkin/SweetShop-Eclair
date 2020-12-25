@@ -49,8 +49,9 @@ extension CategoryViewController {
     }
     
     //MARK: - Cell collectionview tap behavior
-    func cellButtonhandler(cell: UICollectionView) {
-        //let 
+    func cellButtonhandler(cell: UICollectionView, productData: CategoryModel.CategoryData? = nil) {
+        let productVC = ProductViewController()
+        navigationController?.pushViewController(productVC, animated: true)
     }
 }
 

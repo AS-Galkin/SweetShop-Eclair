@@ -23,7 +23,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.contentView.layer.cornerRadius = 7.0
+        self.contentView.layer.cornerRadius = 5.0
         self.contentView.layer.borderWidth = 0.0
         self.contentView.layer.masksToBounds = true
         contentView.addSubview(imageView)
