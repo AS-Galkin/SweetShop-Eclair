@@ -51,6 +51,9 @@ extension CategoryViewController {
     //MARK: - Cell collectionview tap behavior
     func cellButtonhandler(cell: UICollectionView, productData: CategoryModel.CategoryData? = nil) {
         let productVC = ProductViewController()
+        if let poductData = productData {
+            productVC.selectedProduct = productData
+        }
         navigationController?.pushViewController(productVC, animated: true)
     }
 }
@@ -66,7 +69,7 @@ extension CategoryViewController: UICollectionViewDelegate {
     
     //MARK: - Setting selector for each cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       cellButtonhandler(cell: collectionView)
+        cellButtonhandler(cell: collectionView, productData: self.viewModel.model?[indexPath.row])
     }
 }
 

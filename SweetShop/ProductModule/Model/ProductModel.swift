@@ -12,16 +12,37 @@ enum ProductModel: DataStatesProtocol {
     typealias Nested = DataStates<ProductData>
     
     internal struct ProductData: Decodable {
+        var productData: ProductInit?
         
-        var id: Int?
-        var price: Float?
+        internal struct ProductInit: Decodable {
+            
+            var id: Int?
+            var price: String?
+            var manufacturer: ManufacturerData?
+            var sweetness: SwetnessData?
+            
+        }
+        internal struct ManufacturerData: Decodable {
+            var manId: Int?
+            var manName: String?
+            var manDescription: String?
+        }
         
         internal struct SwetnessData: Decodable {
-            var id: Int?
-            var name: String?
-            var shortDescription: String?
-            var description: String?
-            var weight: Float?
+            var swId: Int?
+            var swName: String?
+            var swDescription: String?
+            var swShortDescription: String?
+            var swWeight: String?
+            var swImage: ImageData?
+        }
+        
+        internal struct ImageData: Decodable {
+            var imId: Int?
+            var imName: String?
         }
     }
+    
 }
+
+

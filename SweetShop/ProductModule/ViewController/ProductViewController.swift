@@ -9,11 +9,14 @@ import UIKit
 
 class ProductViewController: UIViewController {
 
-    var selectedProduct: ProductModel?
-    
+    var selectedProduct: CategoryModel.CategoryData?
+    var productViewModel: ProductViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        productViewModel = ProductViewModel()
+        downloadJsonData()
         
     }
     
