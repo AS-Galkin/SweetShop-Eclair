@@ -24,4 +24,8 @@ class ProductViewController: UIViewController {
         self.view = ProductView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateProductView()
+    }
 }

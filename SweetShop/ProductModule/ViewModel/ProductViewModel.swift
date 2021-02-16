@@ -6,13 +6,20 @@
 //
 
 import Foundation
+import UIKit
+
 final class ProductViewModel: ViewModelProtocol {
+    
     
     weak var delegate: Downloadable?
     
     typealias DataType = DataStates<[ProductModel.ProductData]>
     
     var updateData: ((DataStates<[ProductModel.ProductData]>) -> Void)?
+    
+    var model: [ProductModel.ProductData]?
+    
+    var updateImages: (([UIImage]) -> Void)?
     
     init () {
         updateData?(.initial)
@@ -26,17 +33,25 @@ final class ProductViewModel: ViewModelProtocol {
         guard let request = try? network.request(parameters: parameters, url: url) else {return}
         let response = try? network.response(urlRequest: request) { (data) in
             let decoder = JSONDecoder()
-            print(String(data: data, encoding: .utf8))
-            let model = try! decoder.decode([ProductModel.ProductData]?.self, from: data) as [ProductModel.ProductData]?
-            print(model)
-            //var images: [UIImage] = []
+            self.model = try? decoder.decode([ProductModel.ProductData]?.self, from: data) as [ProductModel.ProductData]?
             
-            //                DispatchQueue.main.async {[weak self] in
-            //                    self?.updateData?(.success(model))
-            //                    self?.updateImage?(images)
-            //                }
+            var images: [UIImage] = []
+            
+            if let model = self.model {
+                for i in model {
+                    let imageURL = URL(string: URIString.downloadURL.rawValue + (i.productData?.sweetness?.swImage?.imName)!)!
+                    print(imageURL)
+                    let image = try? UIImage(data: Data(contentsOf: imageURL))
+                    if let image = image {
+                        images.append(image)
+                    }
+                }
+                
+                DispatchQueue.main.async {[weak self] in
+                    self?.updateData?(.success(model))
+                    self?.updateImages?(images)
+                }
+            }
         }
-        
-        
     }
 }

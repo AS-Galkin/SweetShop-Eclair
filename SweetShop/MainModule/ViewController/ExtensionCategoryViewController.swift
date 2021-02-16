@@ -12,7 +12,7 @@ extension CategoryViewController {
     //MARK: - CONNECTION
     func downloadJsonData() {
         let param = ["all":"","table":"Category"]
-        viewModel.downloadJson(parameters: param, url: URIString.localURL.rawValue + URIString.apiGetDataURN.rawValue)
+        viewModel.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
     }
     
     //MARK: - Method to run update View

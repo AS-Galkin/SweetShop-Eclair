@@ -9,10 +9,21 @@ import UIKit
 
 class ProductView: UIView {
     internal lazy var productCollectionView = ProductCollectionView()
+    var viewData: DataStates<[ProductModel.ProductData]> = .initial {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    internal lazy var dataForUpdate: [ProductModel.ProductData] = []
+    
+    var viewImages: [UIImage] = [] {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        productCollectionView.dataSource = self
         backgroundColor = .cyan
                 
         addSubview(productCollectionView)
@@ -22,5 +33,22 @@ class ProductView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        switch viewData {
+        case .initial:
+            print("INITIAL STATE")
+            break
+        case .success(let result):
+            print("SUCESS")
+            dataForUpdate = result
+            productCollectionView.dataSource = self
+            break
+        case .loading(let result):
+            break
+        case .failure(let result):
+            break
+        }
+    }
 }
