@@ -9,6 +9,8 @@ import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell {
     
+    var parentVC: ProductViewController?
+    
     private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = false
@@ -72,10 +74,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     var price: String? {
         didSet {
             if let price = self.price {
-                priceButton.setTitle("+" + price + " \u{20BD}", for: .normal)
+                priceButton.setTitle(" + " + price + " \u{20BD} ", for: .normal)
                 priceButtonSetting()
             } else {
-                priceButton.setTitle("+0 \u{20BD}", for: .normal)
+                priceButton.setTitle(" + 0 \u{20BD} ", for: .normal)
                 priceButtonSetting()
             }
         }
@@ -102,7 +104,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func priceButtonHandler(sender: UIButton) {
-        print("button was pressed")
+        parentVC?.cellPriceButtonHandler()
     }
     
     private func priceButtonSetting() {
@@ -128,14 +130,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     private func createConstraintsPriceButton() {
         priceButton.topAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 12).isActive = true
-        priceButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
+        priceButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
         priceButton.frame.size.width = contentView.frame.size.width / 2
         
     }
     
     private func createConstraintsWeightLabel() {
-        weightLabel.topAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 20).isActive = true
-        weightLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        weightLabel.topAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 15).isActive = true
+        weightLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
         weightLabel.frame.size.width = contentView.frame.size.width / 2
     }
 }

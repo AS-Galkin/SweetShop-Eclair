@@ -33,8 +33,27 @@ extension ProductViewController {
             self?.typeCastView().viewImages = viewImages
         }
     }
+    
+    internal func showDetailProductView(productData: ProductModel.ProductData? = nil, productImage: UIImage? = nil) {
+        
+        detailProductViewController = DetailProductViewController()
+        guard let productData = productData,
+              let productImage = productImage else {return}
+        detailProductViewController.typeCastDetailProductView().product = productData
+        detailProductViewController.typeCastDetailProductView().imageView.image = productImage
+        
+        self.present(detailProductViewController, animated: true, completion: nil)
+    }
+    
+    internal func cellPriceButtonHandler() {
+        countTabBarItemBadge += 1
+        cartTabBarItem?.badgeValue = String(countTabBarItemBadge)
+        view.setNeedsLayout()
+    }
 }
 
 extension ProductViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showDetailProductView(productData: self.productViewModel.model?[indexPath.row], productImage: self.typeCastView().viewImages[indexPath.row])
+    }
 }

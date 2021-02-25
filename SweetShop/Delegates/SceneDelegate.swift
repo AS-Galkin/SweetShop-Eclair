@@ -32,6 +32,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         tabBarController.setViewControllers(navViewControllerArray, animated: false)
         
+        
+        categoryViewController.cartTabBarItem = cartViewController.tabBarItem
+        
         window?.rootViewController = tabBarController
 //        print(tabBarController.tabBar.frame)
     }
@@ -91,7 +94,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     viewController.tabBarItem = UITabBarItem(title: Titles.allCases[index].rawValue, image: UIImage(named:Icons.allCases[index].rawValue), selectedImage: nil)
                     viewController.title = Titles.allCases[index].rawValue
                     viewController.tabBarItem.badgeColor = .brown
-                    viewController.view.backgroundColor = .cyan
+                    viewController.view.backgroundColor = .white
                 }
             }
         }

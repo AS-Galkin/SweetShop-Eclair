@@ -11,6 +11,7 @@ class CategoryViewController: UIViewController {
     
     internal var viewModel: CategoryViewModel!
     //internal var categoryView: CategoryView!
+    internal var cartTabBarItem: UITabBarItem?
     
     override func loadView() {
         self.view = CategoryView()
@@ -25,7 +26,7 @@ class CategoryViewController: UIViewController {
         
         tabBarItem.image = UIImage(named: Icons.categoryIcon.rawValue)
         navigationItem.title = "Главная"
-       
+        
         bindMainScrollView()
         bindMainSearchBar()
         bindCollectionView()

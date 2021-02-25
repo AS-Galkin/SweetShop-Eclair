@@ -16,6 +16,6 @@ class SettingUserViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = SettingView()
+        self.view = SettingUserView()
     }
 }

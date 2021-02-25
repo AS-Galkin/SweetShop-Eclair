@@ -51,6 +51,7 @@ extension CategoryViewController {
     //MARK: - Cell collectionview tap behavior
     func cellButtonhandler(cell: UICollectionView, productData: CategoryModel.CategoryData? = nil) {
         let productVC = ProductViewController()
+        productVC.cartTabBarItem = self.cartTabBarItem
         if let poductData = productData {
             productVC.selectedProduct = productData
         }

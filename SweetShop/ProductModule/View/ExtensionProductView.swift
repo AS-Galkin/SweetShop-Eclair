@@ -25,7 +25,7 @@ extension ProductView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCollectionViewCell {
-            print(dataForUpdate)
+            myCell.parentVC = self.parentVC
             myCell.imageCell = viewImages[indexPath.row]
             myCell.descriptionCell = dataForUpdate[indexPath.row].productData?.sweetness?.swName
             myCell.price = dataForUpdate[indexPath.row].productData?.price

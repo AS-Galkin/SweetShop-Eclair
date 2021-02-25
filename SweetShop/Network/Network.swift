@@ -8,7 +8,14 @@
 import Foundation
 
 internal final class Network {
-    func request(parameters: [String: Any], url: String) throws -> URLRequest {
+    
+    static func shared() -> Network {
+        return Network()
+    }
+    
+    private init() {}
+    
+    internal func request(parameters: [String: Any], url: String) throws -> URLRequest {
         guard let url = URL(string: url) else {
             return URLRequest(url: URL(string: "nil")!)
         }
@@ -21,7 +28,7 @@ internal final class Network {
         return request
     }
     
-    func response(urlRequest: URLRequest, completion: @escaping (_ data: Data) -> Void) throws {
+    internal func response(urlRequest: URLRequest, completion: @escaping (_ data: Data) -> Void) throws {
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard let data = data,
                   let response = response as? HTTPURLResponse,

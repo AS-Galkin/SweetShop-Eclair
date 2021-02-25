@@ -29,9 +29,9 @@ final class ProductViewModel: ViewModelProtocol {
     }
     
     func downloadJson(parameters: [String : Any], url: String) {
-        let network: Network = Network()
-        guard let request = try? network.request(parameters: parameters, url: url) else {return}
-        let response = try? network.response(urlRequest: request) { (data) in
+        //let network: Network = Network()
+        guard let request = try? Network.shared().request(parameters: parameters, url: url) else {return}
+        let response = try? Network.shared().response(urlRequest: request) { (data) in
             let decoder = JSONDecoder()
             self.model = try? decoder.decode([ProductModel.ProductData]?.self, from: data) as [ProductModel.ProductData]?
             

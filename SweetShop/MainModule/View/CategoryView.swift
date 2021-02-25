@@ -31,7 +31,7 @@ final class CategoryView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        backgroundColor = .cyan
+        backgroundColor = .white
                 
         addSubview(mainScrollView)
    

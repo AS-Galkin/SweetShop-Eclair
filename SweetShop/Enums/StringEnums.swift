@@ -23,6 +23,7 @@ enum Icons: String {
     case cartIcon = "cart_icon"
     case locationIcon = "location_icon"
     case settingsIcon = "settings"
+    case profileIcon = "profile"
     static var allCases: [Icons] {
         return [categoryIcon, userIcon, cartIcon, locationIcon]
     }

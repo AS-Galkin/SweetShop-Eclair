@@ -9,11 +9,15 @@ import UIKit
 
 class ProductView: UIView {
     internal lazy var productCollectionView = ProductCollectionView()
+    
+    internal var parentVC: ProductViewController?
+    
     var viewData: DataStates<[ProductModel.ProductData]> = .initial {
         didSet {
             setNeedsLayout()
         }
     }
+    
     internal lazy var dataForUpdate: [ProductModel.ProductData] = []
     
     var viewImages: [UIImage] = [] {
@@ -24,8 +28,7 @@ class ProductView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        backgroundColor = .cyan
-                
+        backgroundColor = .white
         addSubview(productCollectionView)
         makeConstraintsCollectionView()
     }
@@ -44,6 +47,7 @@ class ProductView: UIView {
             print("SUCESS")
             dataForUpdate = result
             productCollectionView.dataSource = self
+        
             break
         case .loading(let result):
             break
