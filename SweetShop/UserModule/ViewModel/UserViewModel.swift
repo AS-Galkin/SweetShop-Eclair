@@ -12,6 +12,11 @@ final class UserViewModel: ViewModelProtocol {
     
     var updateData: ((DataStates<[UserModel.UserData]>) -> Void)?
     var model: [UserModel.UserData]?
+    var modelData: Data?
+    
+    init() {
+        updateData?(.initial)
+    }
     
     func downloadData() {
     }
@@ -20,12 +25,19 @@ final class UserViewModel: ViewModelProtocol {
         guard let request = try? Network.shared().request(parameters: parameters, url: url) else {
             return
         }
-        
-        print(request)
         let response = try? Network.shared().response(urlRequest: request, completion: { (data) in
+            self.modelData = data
             let decoder = JSONDecoder()
-            self.model = try! decoder.decode([UserModel.UserData]?.self, from: data) as [UserModel.UserData]?
+            self.model = try? decoder.decode([UserModel.UserData]?.self, from: data) as [UserModel.UserData]?
         })
-        
+        DispatchQueue.main.async {[weak self] in
+            if let model = self?.model {
+                if !model.isEmpty {
+                    self?.updateData?(.success(model))
+                } else {
+                    self?.updateData?(.failure(model))
+                }
+            }
+        }
     }
 }

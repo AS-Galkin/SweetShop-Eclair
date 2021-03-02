@@ -9,6 +9,12 @@ import UIKit
 
 class SettingUserView: UIView {
     
+    internal var viewData: DataStates<[UserModel.UserData]> = .initial {
+        didSet{
+            setFields()
+        }
+    }
+    
     var scrollView: UIScrollView?
     var segmentControl: UISegmentedControl?
     
@@ -108,6 +114,36 @@ class SettingUserView: UIView {
         scrollView?.addSubview(address)
         makeConstraintsScrollView()
         makeConstraintsTexFields()
+    }
+    
+    internal func setFields() {
+        print(#function)
+        switch viewData {
+        case .initial:
+            break
+        case .success(let result):
+            name.text = result[0].f_name
+            surName.text = result[0].s_name
+            email.text = result[0].email
+            phone.text = result[0].phone
+            birthDate.text = String(result[0].birthday ?? 0)
+            address.text = result[0].address
+            switch result[0].gender {
+            case "Мужской":
+                segmentControl?.selectedSegmentIndex = 0
+                break
+            case "Женский":
+                segmentControl?.selectedSegmentIndex = 1
+                break
+            default:
+                break
+            }
+            break
+        case .loading(let result):
+            break
+        case .failure(let result):
+            break
+        }
     }
     
     required init?(coder: NSCoder) {

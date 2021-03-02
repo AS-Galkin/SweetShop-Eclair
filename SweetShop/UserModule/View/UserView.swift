@@ -9,25 +9,33 @@ import UIKit
 
 class UserView: UIView {
     
+    weak var delegate: UserViewController?
     private var profileView: ProfileView?
     
     internal var viewData: DataStates<[UserModel.UserData]> = .initial {
         didSet {
-            setNeedsLayout()
+            setFields()
         }
     }
     
     internal var name: String? {
         didSet {
             profileView?.nameLabel.text = name
-            setNeedsLayout()
+            //setNeedsLayout()
+        }
+    }
+    
+    internal var phone: String? {
+        didSet {
+            profileView?.phoneLabel.text = phone
+            //setNeedsLayout()
         }
     }
     
     internal var image: UIImage? {
         didSet {
             profileView?.profileImageView.image = image
-            setNeedsLayout()
+            //setNeedsLayout()
         }
     }
     
@@ -65,12 +73,13 @@ class UserView: UIView {
         button.layer.shadowOpacity = 1.0
         button.setTitleColor(.systemRed, for: .normal)
         button.setTitle("Выход", for: .normal)
+        button.addTarget(self, action: #selector(exitButtonHandler(sender:)), for: .touchUpInside)
         return button
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .brown
+        backgroundColor = .white
         profileView = ProfileView()
         profileView?.translatesAutoresizingMaskIntoConstraints = false
         addSubview(profileView!)
@@ -86,9 +95,26 @@ class UserView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func setNeedsLayout() {
-//        <#code#>
-//    }
+    internal func setFields() {
+        switch viewData {
+        case .initial:
+            print("initial load user data")
+            break
+        case .loading(let result):
+            print("Loading load user data")
+            print(result)
+            break
+        case .success(let result):
+            print("Sucess load user data")
+            name = result[0].f_name
+            phone = result[0].phone
+            break
+        case .failure(let result):
+            print("Failure load user data")
+            print(result)
+            break
+        }
+    }
     
    private class ProfileView: UIView {
     
@@ -138,6 +164,10 @@ class UserView: UIView {
             phoneLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
             phoneLabel.centerXAnchor.constraint(equalTo: profileImageView.centerXAnchor).isActive = true
         }
+    }
+    
+    @objc private func exitButtonHandler(sender: UIButton) {
+        delegate?.exitButtonHandler()
     }
     
     func makeConstraintsProfileView() {

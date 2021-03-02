@@ -12,6 +12,10 @@ extension UserViewController {
         return self.view as! UserView
     }
     
+    internal func typeCastUnloggedUserView() -> UnloggedUserView {
+        return self.view as! UnloggedUserView
+    }
+    
     internal func downloadJsonData() {
         let param = ["id":"2", "table":"User", "all":""]
         viewModel.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)

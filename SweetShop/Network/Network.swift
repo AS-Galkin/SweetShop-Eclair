@@ -24,7 +24,6 @@ internal final class Network {
         request.setValue("IOS APP", forHTTPHeaderField: "User-Agent")
         request.httpMethod = "POST"
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
-        print(String(data: request.httpBody!, encoding: .utf8) )
         return request
     }
     

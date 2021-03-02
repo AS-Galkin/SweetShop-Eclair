@@ -36,6 +36,8 @@
 		9483258D25791714008D1449 /* StringEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258C25791714008D1449 /* StringEnums.swift */; };
 		949148A3257F69B000498A87 /* SettingUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949148A2257F69B000498A87 /* SettingUserViewController.swift */; };
 		949148AC257F8B2200498A87 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949148AB257F8B2200498A87 /* CategoryCollectionViewCell.swift */; };
+		949636B325ED15F400E661DE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949636B225ED15F400E661DE /* LoginView.swift */; };
+		949636B825ED1A2900E661DE /* UnloggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949636B725ED1A2900E661DE /* UnloggedViewController.swift */; };
 		949ED42B25779BDB00FB69C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED42A25779BDB00FB69C3 /* AppDelegate.swift */; };
 		949ED42D25779BDB00FB69C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949ED42C25779BDB00FB69C3 /* SceneDelegate.swift */; };
 		949ED43225779BDB00FB69C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949ED43025779BDB00FB69C3 /* Main.storyboard */; };
@@ -49,6 +51,7 @@
 		94B3BA4825E63C6200BA7C32 /* ExtensionSettingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4725E63C6200BA7C32 /* ExtensionSettingUserView.swift */; };
 		94B3BA4D25E63CBD00BA7C32 /* ExtensionUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */; };
 		94BBD7B625E7DFCB00B73578 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BBD7B525E7DFCB00B73578 /* UserViewModel.swift */; };
+		94BBD7BB25E7EFD600B73578 /* UnloggedUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BBD7BA25E7EFD600B73578 /* UnloggedUserView.swift */; };
 		94C3CD8C25DC0C7100491512 /* DetailProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3CD8B25DC0C7100491512 /* DetailProductView.swift */; };
 		94C3CD9125DC117100491512 /* DetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3CD9025DC117100491512 /* DetailProductViewController.swift */; };
 		94C41604258B66DD0097FC1C /* BunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C41603258B66DD0097FC1C /* BunnerView.swift */; };
@@ -109,6 +112,8 @@
 		9483258C25791714008D1449 /* StringEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnums.swift; sourceTree = "<group>"; };
 		949148A2257F69B000498A87 /* SettingUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserViewController.swift; sourceTree = "<group>"; };
 		949148AB257F8B2200498A87 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		949636B225ED15F400E661DE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		949636B725ED1A2900E661DE /* UnloggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnloggedViewController.swift; sourceTree = "<group>"; };
 		949ED42725779BDB00FB69C3 /* SweetShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweetShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949ED42A25779BDB00FB69C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		949ED42C25779BDB00FB69C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 		94B3BA4725E63C6200BA7C32 /* ExtensionSettingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSettingUserView.swift; sourceTree = "<group>"; };
 		94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserViewController.swift; sourceTree = "<group>"; };
 		94BBD7B525E7DFCB00B73578 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		94BBD7BA25E7EFD600B73578 /* UnloggedUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnloggedUserView.swift; sourceTree = "<group>"; };
 		94C3CD8B25DC0C7100491512 /* DetailProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductView.swift; sourceTree = "<group>"; };
 		94C3CD9025DC117100491512 /* DetailProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewController.swift; sourceTree = "<group>"; };
 		94C41603258B66DD0097FC1C /* BunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunnerView.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 				949148A2257F69B000498A87 /* SettingUserViewController.swift */,
 				94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */,
 				94E9E2142577CD2A00CD5281 /* UserViewController.swift */,
+				949636B725ED1A2900E661DE /* UnloggedViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -235,6 +242,8 @@
 				946EA9C825961348000BA7DB /* SettingUserView.swift */,
 				94B3BA4225E63C2900BA7C32 /* UserView.swift */,
 				94B3BA4725E63C6200BA7C32 /* ExtensionSettingUserView.swift */,
+				94BBD7BA25E7EFD600B73578 /* UnloggedUserView.swift */,
+				949636B225ED15F400E661DE /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,6 +637,7 @@
 				94C3CD9125DC117100491512 /* DetailProductViewController.swift in Sources */,
 				94E9E2152577CD2A00CD5281 /* UserViewController.swift in Sources */,
 				945C2E9C2595F65500E6B918 /* ProductView.swift in Sources */,
+				94BBD7BB25E7EFD600B73578 /* UnloggedUserView.swift in Sources */,
 				94CEC0F825DD23C4007EED5B /* ProductScrollView.swift in Sources */,
 				94B3BA4D25E63CBD00BA7C32 /* ExtensionUserViewController.swift in Sources */,
 				94F053F4257A48CC008A598F /* NavigationViewController.swift in Sources */,
@@ -643,6 +653,7 @@
 				94F053E4257A4772008A598F /* TabBarController.swift in Sources */,
 				941A8B8E2592245100E69CEE /* ViewModelProtocol.swift in Sources */,
 				949ED42D25779BDB00FB69C3 /* SceneDelegate.swift in Sources */,
+				949636B825ED1A2900E661DE /* UnloggedViewController.swift in Sources */,
 				949148AC257F8B2200498A87 /* CategoryCollectionViewCell.swift in Sources */,
 				945C2EA92595F6F300E6B918 /* ProductCollectionView.swift in Sources */,
 				945C2ECA2595F7C600E6B918 /* ExtensionProductView.swift in Sources */,
@@ -662,6 +673,7 @@
 				94A1948625DFF92800C544F7 /* UserModel.swift in Sources */,
 				946232702583BDAF005EA0AD /* CategoryModel.swift in Sources */,
 				9483258D25791714008D1449 /* StringEnums.swift in Sources */,
+				949636B325ED15F400E661DE /* LoginView.swift in Sources */,
 				94C3CD8C25DC0C7100491512 /* DetailProductView.swift in Sources */,
 				9483257A257910DF008D1449 /* ProductViewController.swift in Sources */,
 				94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */,
