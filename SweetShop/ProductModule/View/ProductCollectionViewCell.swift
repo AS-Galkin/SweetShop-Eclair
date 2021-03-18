@@ -9,7 +9,9 @@ import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell {
     
-    var parentVC: ProductViewController?
+    weak var parentVC: ProductViewController?
+    weak var buttonDelegate: AddProductToCart?
+    var viewingData: ProductModel.ProductData?
     
     private var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -32,7 +34,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     private var priceButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 88/255, green: 46/255, blue: 165/255, alpha: 0.9)
+        button.backgroundColor = .mainColorWithAplha
         button.layer.cornerRadius = 13.0
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -104,7 +106,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func priceButtonHandler(sender: UIButton) {
-        parentVC?.cellPriceButtonHandler()
+        if let productModel = viewingData {
+            if let cartProduct = parentVC?.productViewModel.createCartProduct(productModel: productModel) {
+                buttonDelegate?.addProduct(product: cartProduct)
+            }
+        }
     }
     
     private func priceButtonSetting() {

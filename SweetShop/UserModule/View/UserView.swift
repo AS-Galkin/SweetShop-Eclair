@@ -102,7 +102,6 @@ class UserView: UIView {
             break
         case .loading(let result):
             print("Loading load user data")
-            print(result)
             break
         case .success(let result):
             print("Sucess load user data")
@@ -111,7 +110,6 @@ class UserView: UIView {
             break
         case .failure(let result):
             print("Failure load user data")
-            print(result)
             break
         }
     }

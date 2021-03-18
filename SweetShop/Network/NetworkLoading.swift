@@ -7,10 +7,10 @@
 
 import Foundation
 
-internal final class Network {
+internal final class NetworkLoading {
     
-    static func shared() -> Network {
-        return Network()
+    static func shared() -> NetworkLoading {
+        return NetworkLoading()
     }
     
     private init() {}

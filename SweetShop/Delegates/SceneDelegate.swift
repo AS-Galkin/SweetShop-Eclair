@@ -13,7 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        print(#function + "SceneDelegate")
         //MARK: - Настраиваем первоначальную сцену. Инициализируем TabBarController.  Оборачиваем ViewController в NavigationViewController.
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
@@ -34,6 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         categoryViewController.cartTabBarItem = cartViewController.tabBarItem
+        categoryViewController.cartVC = cartViewController
         
         window?.rootViewController = tabBarController
 //        print(tabBarController.tabBar.frame)
@@ -84,7 +84,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func setTabBarItem(viewControllerArray: [UIViewController]) {
         
         for viewController in viewControllerArray {
-            print(viewController.typeName)
             for index in 0..<viewControllerArray.count {
                 //MARK: - Создаем подстроку
                 let start = Icons.allCases[index].rawValue.startIndex

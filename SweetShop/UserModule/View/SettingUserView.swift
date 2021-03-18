@@ -18,10 +18,28 @@ class SettingUserView: UIView {
     var scrollView: UIScrollView?
     var segmentControl: UISegmentedControl?
     
+    internal var personalDataLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Личные данные"
+        label.font = UIFont(name: "AlNile-Bold", size: 15)
+        label.textColor = .alnileBoldColor
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    internal var contactLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Контактные данные"
+        label.font = UIFont(name: "AlNile-Bold", size: 15)
+        label.textColor = .alnileBoldColor
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     var name: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        textField.font = UIFont(name: "Avenir-Light", size: 12.0)
         textField.layer.borderWidth = 0.4
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowRadius = 0.3
@@ -34,7 +52,7 @@ class SettingUserView: UIView {
     var surName: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        textField.font = UIFont(name: "Avenir-Light", size: 12.0)
         textField.layer.borderWidth = 0.4
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowRadius = 0.3
@@ -47,20 +65,21 @@ class SettingUserView: UIView {
     var email: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        textField.font = UIFont(name: "Avenir-Light", size: 12.0)
         textField.layer.borderWidth = 0.4
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowRadius = 0.3
         textField.layer.shadowOffset = .zero
         textField.layer.shadowOpacity = 1.0
         textField.placeholder = "email"
+        textField.isUserInteractionEnabled = false
         return textField
     }()
     
     var phone: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        textField.font = UIFont(name: "Avenir-Light", size: 12.0)
         textField.layer.borderWidth = 0.4
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowRadius = 0.3
@@ -73,7 +92,7 @@ class SettingUserView: UIView {
     var birthDate: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        textField.font = UIFont(name: "Avenir-Light", size: 12.0)
         textField.layer.borderWidth = 0.4
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowRadius = 0.3
@@ -86,7 +105,7 @@ class SettingUserView: UIView {
     var address: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        textField.font = UIFont(name: "Avenir-Light", size: 12.0)
         textField.layer.borderWidth = 0.4
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowRadius = 0.3
@@ -105,6 +124,8 @@ class SettingUserView: UIView {
         scrollView = UIScrollView()
         segmentControl = UISegmentedControl(items: sexArray)
         addSubview(scrollView!)
+        scrollView?.addSubview(personalDataLabel)
+        scrollView?.addSubview(contactLabel)
         scrollView?.addSubview(name)
         scrollView?.addSubview(surName)
         scrollView?.addSubview(segmentControl ?? UISegmentedControl())
@@ -117,7 +138,6 @@ class SettingUserView: UIView {
     }
     
     internal func setFields() {
-        print(#function)
         switch viewData {
         case .initial:
             break

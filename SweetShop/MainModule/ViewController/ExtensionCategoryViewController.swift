@@ -52,9 +52,12 @@ extension CategoryViewController {
     func cellButtonhandler(cell: UICollectionView, productData: CategoryModel.CategoryData? = nil) {
         let productVC = ProductViewController()
         productVC.cartTabBarItem = self.cartTabBarItem
+        productVC.cartVC = cartVC
+        
         if let poductData = productData {
             productVC.selectedProduct = productData
         }
+        
         navigationController?.pushViewController(productVC, animated: true)
     }
 }

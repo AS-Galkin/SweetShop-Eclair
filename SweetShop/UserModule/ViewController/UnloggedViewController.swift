@@ -35,7 +35,6 @@ class UnloggedViewController: UIViewController {
     
     internal func checkUserInDatabase(login: String, password: String) {
         let param = ["table":"User","email": login, "password": password, "all":""]
-        print(param)
         viewModel?.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
         viewModel?.updateData = {[weak self] viewData in
             self?.viewData = viewData
@@ -53,7 +52,6 @@ class UnloggedViewController: UIViewController {
             break
         case .loading(let result):
             print("Loading load user data")
-            print(result)
             break
         case .success(let result):
             print("Sucess load user data")
@@ -61,11 +59,9 @@ class UnloggedViewController: UIViewController {
             parentVC?.loadView()
             parentVC?.typeCastUserView().name = result[0].f_name
             parentVC?.navigationController?.popViewController(animated: true)
-            print(result)
             break
         case .failure(let result):
             print("Failure load user data")
-            print(result)
             break
         }
     }

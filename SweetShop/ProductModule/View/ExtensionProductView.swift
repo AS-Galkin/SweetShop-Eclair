@@ -19,12 +19,13 @@ extension ProductView {
 
 extension ProductView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(dataForUpdate.count)
         return dataForUpdate.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCollectionViewCell {
+            myCell.buttonDelegate = parentVC.self
+            myCell.viewingData = dataForUpdate[indexPath.row]
             myCell.parentVC = self.parentVC
             myCell.imageCell = viewImages[indexPath.row]
             myCell.descriptionCell = dataForUpdate[indexPath.row].productData?.sweetness?.swName

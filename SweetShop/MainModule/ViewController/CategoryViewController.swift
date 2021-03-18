@@ -12,6 +12,7 @@ class CategoryViewController: UIViewController {
     internal var viewModel: CategoryViewModel!
     //internal var categoryView: CategoryView!
     internal var cartTabBarItem: UITabBarItem?
+    internal var cartVC: CartViewController?
     
     override func loadView() {
         self.view = CategoryView()

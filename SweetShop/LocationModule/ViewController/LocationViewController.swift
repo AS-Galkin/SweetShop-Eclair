@@ -10,9 +10,6 @@ import UIKit
 class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function+"LocationView")
-        
-
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -22,6 +19,6 @@ class LocationViewController: UIViewController {
     }
     
     @objc func showCartVCHandler(sender: UIBarButtonItem) {
-        print(self.tabBarController?.selectedViewController?.typeName)
+
     }
 }

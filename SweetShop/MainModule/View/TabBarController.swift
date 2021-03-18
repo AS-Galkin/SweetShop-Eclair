@@ -13,6 +13,4 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         print(#function+"tabBarController")
     }
-
-
 }

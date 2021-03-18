@@ -17,4 +17,9 @@ enum URIString: String {
     //case remoteURL = "http://83.149.7.237/"
     case apiGetDataURN = "api/getDataFromDB.php"
     case apiGetProductDataURN = "api/getProductsJson.php"
+    case apiUploadDataURN = "api/uploadDataToDB.php"
+    case apiGetCartSweetnessURN = "api/getSweetnessForCart.php"
+    case apiUpdateCartDataURN = "api/updateCartDataDB.php"
+    case apiInsertCartDataURN = "api/insertCartDataDB.php"
+    case apiDeleteCartDataURN = "api/deleteCartDataDB.php"
 }

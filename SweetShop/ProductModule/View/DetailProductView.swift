@@ -72,6 +72,8 @@ class DetailProductView: UIView {
     internal class AddToCartView: UIView {
         
         var parentViewController: DetailProductViewController?
+        internal weak var buttonDelegate: AddProductToCart?
+        internal var cartData: CartModel.CartData?
         
         lazy var addToCartButton: UIButton = UIButton()
         lazy var priceLabel: UILabel = UILabel()
@@ -105,7 +107,7 @@ class DetailProductView: UIView {
             addToCartButton.setTitle(" + Добавить ", for: .normal)
             addToCartButton.titleLabel?.textAlignment = .center
             addToCartButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-            addToCartButton.backgroundColor = UIColor(red: 88/255, green: 46/255, blue: 165/255, alpha: 0.9)
+            addToCartButton.backgroundColor = .mainColorWithAplha
             addToCartButton.layer.cornerRadius = 13.0
         }
         
@@ -129,7 +131,10 @@ class DetailProductView: UIView {
         }
         
         @objc func cartButtonHandler(sender: UIButton) {
-            parentViewController?.cartButtonHandler()
+            //parentViewController?.cartButtonHandler()
+            if let cartData = self.cartData {
+                buttonDelegate?.addProduct(product: cartData)
+            }
         }
 
     }

@@ -47,7 +47,6 @@ class ProductView: UIView {
             print("SUCESS")
             dataForUpdate = result
             productCollectionView.dataSource = self
-        
             break
         case .loading(let result):
             break

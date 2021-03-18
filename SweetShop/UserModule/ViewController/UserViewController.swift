@@ -30,8 +30,15 @@ class UserViewController: UIViewController {
                 self.typeCastUserView().viewData = .success(person)
                 self.typeCastUserView().delegate = self
             } else {
-                self.view = UnloggedUserView(frame: UIScreen.main.bounds)
-                self.typeCastUnloggedUserView().delegate = self
+                if let person = try? decoder.decode(UserModel.UserData?.self, from: savedPerson) as UserModel.UserData? {
+                    self.view = UserView(frame: UIScreen.main.bounds)
+                    let array = [person]
+                    self.typeCastUserView().viewData = .success(array)
+                    self.typeCastUserView().delegate = self
+                } else {
+                    self.view = UnloggedUserView(frame: UIScreen.main.bounds)
+                    self.typeCastUnloggedUserView().delegate = self
+                }
             }
         } else {
             self.view = UnloggedUserView(frame: UIScreen.main.bounds)
