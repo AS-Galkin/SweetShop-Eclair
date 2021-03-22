@@ -61,6 +61,7 @@ final class CartViewModel: ViewModelProtocol {
                 self.parentVC?.badgeCount = self.productsInCartArray!.count
             } else {
                 self.parentVC?.emptycartIsHidden = false
+                self.parentVC?.typeCastCartView().collectionViewIsInEditing = false
 
             }
         }

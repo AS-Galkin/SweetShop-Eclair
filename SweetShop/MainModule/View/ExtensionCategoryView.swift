@@ -52,8 +52,8 @@ extension CategoryView {
         categoryCollectionView.centerXAnchor.constraint(equalTo: mainScrollView.centerXAnchor).isActive = true
         categoryCollectionView.topAnchor.constraint(equalTo: bunnerView.bottomAnchor, constant: 15.0).isActive = true
         categoryCollectionView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor, constant: -10).isActive = true
-        categoryCollectionView.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, constant: -49).isActive = true
-        categoryCollectionView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor).isActive = true
+        categoryCollectionView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -5).isActive = true
+        //categoryCollectionView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor).isActive = true
     }
 }
 

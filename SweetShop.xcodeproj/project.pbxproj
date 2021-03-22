@@ -13,6 +13,7 @@
 		940D756425F79C95004A1F11 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940D756325F79C95004A1F11 /* EmptyCartView.swift */; };
 		940D756E25F7C7C6004A1F11 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940D756D25F7C7C6004A1F11 /* CartCollectionViewCell.swift */; };
 		940D757325F7C8DC004A1F11 /* CartCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940D757225F7C8DC004A1F11 /* CartCollectionView.swift */; };
+		941027342608D99A0073C02F /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941027332608D99A0073C02F /* RegisterTableViewController.swift */; };
 		941A8B6F2592007E00E69CEE /* NetworkLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B6E2592007E00E69CEE /* NetworkLoading.swift */; };
 		941A8B89259205EB00E69CEE /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B88259205EB00E69CEE /* ErrorCode.swift */; };
 		941A8B8E2592245100E69CEE /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B8D2592245100E69CEE /* ViewModelProtocol.swift */; };
@@ -100,6 +101,7 @@
 		940D756325F79C95004A1F11 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		940D756D25F7C7C6004A1F11 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		940D757225F7C8DC004A1F11 /* CartCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionView.swift; sourceTree = "<group>"; };
+		941027332608D99A0073C02F /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
 		941A8B6E2592007E00E69CEE /* NetworkLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoading.swift; sourceTree = "<group>"; };
 		941A8B88259205EB00E69CEE /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		941A8B8D2592245100E69CEE /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */,
 				94E9E2142577CD2A00CD5281 /* UserViewController.swift */,
 				949636B725ED1A2900E661DE /* UnloggedViewController.swift */,
+				941027332608D99A0073C02F /* RegisterTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				940D756425F79C95004A1F11 /* EmptyCartView.swift in Sources */,
 				941A8B6F2592007E00E69CEE /* NetworkLoading.swift in Sources */,
 				94B3BA4325E63C2900BA7C32 /* UserView.swift in Sources */,
+				941027342608D99A0073C02F /* RegisterTableViewController.swift in Sources */,
 				946EA9C925961348000BA7DB /* SettingUserView.swift in Sources */,
 				945C2EAE2595F70300E6B918 /* ProductCollectionViewCell.swift in Sources */,
 				949ED42B25779BDB00FB69C3 /* AppDelegate.swift in Sources */,

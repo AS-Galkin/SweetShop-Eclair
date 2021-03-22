@@ -83,6 +83,12 @@ class CartViewController: UICollectionViewController {
         self.navigationItem.rightBarButtonItem = chooseButton
         if let user = userId {
             downloadCartData(userID: user)
+        } else {
+            getUserId()
+            
+            if let user = userId {
+                downloadCartData(userID: user)
+            }
         }
     }
     

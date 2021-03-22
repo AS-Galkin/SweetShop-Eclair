@@ -36,6 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         categoryViewController.cartVC = cartViewController
         
         window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
 //        print(tabBarController.tabBar.frame)
     }
 

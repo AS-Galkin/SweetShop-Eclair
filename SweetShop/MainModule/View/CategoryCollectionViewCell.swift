@@ -26,6 +26,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         self.contentView.layer.cornerRadius = 5.0
         self.contentView.layer.borderWidth = 0.0
         self.contentView.layer.masksToBounds = true
+        self.contentView.backgroundColor = .categoryCollectionLayerColor
+        //self.contentView.layer.shadowColor = UIColor.black.cgColor
+        //self.contentView.layer.shadowOpacity = 0.3
         contentView.addSubview(imageView)
         contentView.addSubview(name)
         createConstraintImageView()
@@ -42,8 +45,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         //label.clipsToBounds = true
         label.backgroundColor = UIColor(white: 1, alpha: 0)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .mainColor
-        label.font = .emptyCartFont
+        label.textColor = .black
+        label.font = .categoryFont
         label.textAlignment = .center
         return label
     }()
@@ -52,19 +55,22 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+//        imageView.layer.cornerRadius = 5.0
+//        imageView.layer.masksToBounds = true
         return imageView
     }()
     
     func createConstraintImageView() {
         imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30.0).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
     }
     
     func createConstraintLabel() {
         name.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         name.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-        name.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        name.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+        name.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 }

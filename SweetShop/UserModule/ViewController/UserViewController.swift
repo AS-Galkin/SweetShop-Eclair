@@ -20,20 +20,23 @@ class UserViewController: UIViewController {
         viewModel = UserViewModel()
         //downloadJsonData()
         super.viewDidLoad()
-        if let user = userID {
+        if let _ = userID {
             navigationItem.rightBarButtonItem = settingButton
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if let user = userID {
-            navigationItem.rightBarButtonItem = settingButton
+        guard let _ = userID else {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            return
         }
+        
+        navigationItem.rightBarButtonItem? = settingButton
     }
     
     override func loadView() {
-        if let savedPerson = try? UserDefaults.standard.object(forKey: "SavedPerson") as? Data {
+        if let savedPerson = UserDefaults.standard.object(forKey: "SavedPerson") as? Data {
             let decoder = JSONDecoder()
             if let person = try? decoder.decode([UserModel.UserData]?.self, from: savedPerson) as [UserModel.UserData]? {
                 self.view = UserView(frame: UIScreen.main.bounds)
@@ -66,6 +69,7 @@ class UserViewController: UIViewController {
     
     internal func exitButtonHandler() {
         UserDefaults.standard.removeObject(forKey: "SavedPerson")
+        navigationItem.rightBarButtonItem?.isEnabled = false
         loadView()
     }
     
