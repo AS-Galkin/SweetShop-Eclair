@@ -14,4 +14,9 @@ extension UIColor {
     static var alnileBoldColor: UIColor {return UIColor(red: 173/255, green: 173/255, blue: 173/255, alpha: 1)}
     static var cartCellColor: UIColor {return UIColor(red: 243/255, green: 180/255, blue: 196/255, alpha: 0.4)}
     static var buttonCellColor: UIColor {return UIColor(red: 173/255, green: 189/255, blue: 230/255, alpha: 1)}
+    static var textFieldGray: UIColor {return UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)}
+}
+
+extension UIFont {
+    static var emptyCartFont: UIFont { return UIFont(name: "ChalkboardSE-Bold", size: 22) ?? UIFont()}
 }

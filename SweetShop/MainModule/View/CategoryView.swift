@@ -30,17 +30,11 @@ final class CategoryView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
         backgroundColor = .white
-                
         addSubview(mainScrollView)
-   
         mainScrollView.addSubview(mainSearchBar)
         mainScrollView.addSubview(bunnerView)
         mainScrollView.addSubview(categoryCollectionView)
-        
-        
-        
         makeConstraintsScrollView()
         makeConstrainstMainSearchBar()
         makeConstraintsBunnerView()

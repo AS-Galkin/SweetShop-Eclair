@@ -31,12 +31,11 @@ extension CategoryView {
     
     //MARK: - Make constraints for BannerView
     func makeConstraintsBunnerView() {
-        //bunnerView.frame.size.height = 150
         bunnerView.centerXAnchor.constraint(equalTo: mainScrollView.centerXAnchor).isActive = true
         bunnerView.topAnchor.constraint(equalTo: mainSearchBar.bottomAnchor, constant: 10.0).isActive = true
         bunnerView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor, constant: -10).isActive = true
         //bunnerView.bottomAnchor.constraint(equalTo: bunnerView.topAnchor, constant: 100).isActive = true
-        bunnerView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 3).isActive = true
+        bunnerView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 4).isActive = true
     }
     
     //MARK: - Make constarints for SearchBar

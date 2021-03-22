@@ -15,6 +15,11 @@ extension CategoryViewController {
         viewModel.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
     }
     
+    func downloadBunnerData() {
+        let param = ["all":"","table":"Promotion"]
+        viewModel.downloadBunnerJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
+    }
+    
     //MARK: - Method to run update View
     
     func updateCategoryView() {
@@ -25,7 +30,17 @@ extension CategoryViewController {
         viewModel.updateImage = {[weak self] viewImages in
             self?.typeCastView().viewImages = viewImages
         }
+        
+        viewModel.settingBunnerView = {[weak self] frame, images in
+            self?.typeCastView().bunnerView.scrollFrame = frame
+            self?.typeCastView().bunnerView.images = images
+        }
     }
+    
+    func setFrameForBunner(frame: CGRect) {
+        viewModel.frameAfterLoad = frame
+    }
+    
     
     //MARK: - Cast of type UIView
     func typeCastView() -> CategoryView {
@@ -73,7 +88,7 @@ extension CategoryViewController: UICollectionViewDelegate {
     
     //MARK: - Setting selector for each cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        cellButtonhandler(cell: collectionView, productData: self.viewModel.model?[indexPath.row])
+        cellButtonhandler(cell: collectionView, productData: self.viewModel.categoryModel?[indexPath.row])
     }
 }
 

@@ -10,6 +10,7 @@ import UIKit
 class UserViewController: UIViewController {
     
     internal var viewModel: UserViewModel!
+    internal var userID:Int?
     
     private var settingButton: UIBarButtonItem {
         return UIBarButtonItem(image: UIImage(named: Icons.settingsIcon.rawValue), style: .done, target: self, action: #selector(settingButtonHandler(selector:)))
@@ -19,7 +20,16 @@ class UserViewController: UIViewController {
         viewModel = UserViewModel()
         //downloadJsonData()
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = settingButton
+        if let user = userID {
+            navigationItem.rightBarButtonItem = settingButton
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if let user = userID {
+            navigationItem.rightBarButtonItem = settingButton
+        }
     }
     
     override func loadView() {
@@ -29,12 +39,14 @@ class UserViewController: UIViewController {
                 self.view = UserView(frame: UIScreen.main.bounds)
                 self.typeCastUserView().viewData = .success(person)
                 self.typeCastUserView().delegate = self
+                userID = person[0].id
             } else {
                 if let person = try? decoder.decode(UserModel.UserData?.self, from: savedPerson) as UserModel.UserData? {
                     self.view = UserView(frame: UIScreen.main.bounds)
                     let array = [person]
                     self.typeCastUserView().viewData = .success(array)
                     self.typeCastUserView().delegate = self
+                    userID = person.id
                 } else {
                     self.view = UnloggedUserView(frame: UIScreen.main.bounds)
                     self.typeCastUnloggedUserView().delegate = self

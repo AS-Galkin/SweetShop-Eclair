@@ -37,6 +37,11 @@ class CategoryViewController: UIViewController {
         super.viewWillAppear(true)
         updateCategoryView()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setFrameForBunner(frame: typeCastView().bunnerView.frame)
+        downloadBunnerData()
+    }
 }
 

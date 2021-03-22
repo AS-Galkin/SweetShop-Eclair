@@ -13,10 +13,36 @@ protocol CartCellDelegate: class {
 
 class CartViewController: UICollectionViewController {
     
+    internal weak var categoryVC: CategoryViewController?
     private var indexPathsCollectionView: [IndexPath]?
     internal var viewModel: CartViewModel = CartViewModel()
     internal var userId: Int?
     internal var verbVC: VerbViewController?
+    private var cartView: CartView?
+    private var emptyCartView: EmptyCartView?
+    
+    internal var emptycartIsHidden = true {
+        didSet {
+            emptyCartView?.isHidden = emptycartIsHidden
+            chooseButtonIsEnable = false
+            self.tabBarItem.badgeValue = nil
+        }
+    }
+    
+    internal var chooseButtonIsEnable = true {
+        didSet {
+            chooseButton.isEnabled = chooseButtonIsEnable
+            self.navigationItem.rightBarButtonItem = chooseButton
+        }
+    }
+    
+    internal var badgeCount: Int? {
+        didSet {
+            self.tabBarItem.badgeValue = String(badgeCount!)
+            view.setNeedsLayout()
+        }
+    }
+    
     internal var cartCount = 0 {
         didSet {
             downloadCartData(userID: userId!)
@@ -29,6 +55,7 @@ class CartViewController: UICollectionViewController {
         button.tintColor = .white
         button.target = self
         button.action = #selector(collectionViewStartEditing)
+        button.isEnabled = chooseButtonIsEnable
         return button
     }
     
@@ -44,38 +71,31 @@ class CartViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = chooseButton
-        if let user = userId {
-            downloadCartData(userID: user)
+        if let _ = userId {
             setHowUpdateCartViewData()
+        } else {
+            emptycartIsHidden = false
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(true)
-        getUserId()
-        if let user = userId {
-            self.view = CartView()
-            self.view.backgroundColor = .white
-            typeCastCartView().parentVC = self
-            updateViewData()
-        }
         self.navigationItem.rightBarButtonItem = chooseButton
-        if let badgeCount = viewModel.productsInCartArray?.count {
-            tabBarItem.badgeValue = String(badgeCount)
+        if let user = userId {
+            downloadCartData(userID: user)
         }
     }
     
     override func loadView() {
         getUserId()
-        if let _ = userId {
-            self.view = CartView()
-            typeCastCartView().parentVC = self
-            viewModel.parentVC = self
-        } else {
-            self.view = EmptyCartView()
-            typeCastEmptyCartView().parentVC = self
-        }
+        viewModel.parentVC = self
+        emptyCartView = EmptyCartView()
+        emptyCartView?.parentVC = self
+        emptyCartView?.translatesAutoresizingMaskIntoConstraints = false
+        emptyCartView?.isHidden = emptycartIsHidden
+        createCartView()
+        self.view.addSubview(emptyCartView!)
+        positionEmptycart()
     }
     
     private func getUserId() {
@@ -112,6 +132,21 @@ class CartViewController: UICollectionViewController {
                 }
             }
         }
+    }
+    
+    internal func positionEmptycart () {
+        emptyCartView?.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        emptyCartView?.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        emptyCartView?.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        emptyCartView?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        emptyCartView?.backgroundColor = .white
+    }
+    
+    internal func createCartView() {
+        cartView = CartView()
+        self.view = cartView
+        typeCastCartView().parentVC = self
+        self.view.backgroundColor = .white
     }
     
     private func getIndexPathsCollectionView(collectionView: UICollectionView) -> [IndexPath] {

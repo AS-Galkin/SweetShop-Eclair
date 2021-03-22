@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let cartViewController: CartViewController = CartViewController()
         let locationViewController: LocationViewController = LocationViewController()
         let viewControllerArray: [UIViewController] = [categoryViewController, locationViewController, cartViewController, userViewController]
-        
+        cartViewController.categoryVC = categoryViewController
         setTabBarItem(viewControllerArray: viewControllerArray)
         
         let navViewControllerArray: [NavigationViewController] = coverToNavController(viewControllerArray)

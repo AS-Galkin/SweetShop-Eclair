@@ -12,7 +12,7 @@ class ProductCollectionView: UICollectionView {
     private var collectionLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: UIScreen.main.bounds.height/3 - 10)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: UIScreen.main.bounds.height/3 - 30)
         layout.minimumInteritemSpacing = 5.0
         return layout
     }()

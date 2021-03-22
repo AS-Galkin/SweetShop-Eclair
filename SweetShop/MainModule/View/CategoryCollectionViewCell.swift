@@ -42,8 +42,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         //label.clipsToBounds = true
         label.backgroundColor = UIColor(white: 1, alpha: 0)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(ciColor: CIColor(red: 246/255, green: 42/255, blue: 74/255))
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.textColor = .mainColor
+        label.font = .emptyCartFont
         label.textAlignment = .center
         return label
     }()

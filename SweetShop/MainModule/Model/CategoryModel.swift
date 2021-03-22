@@ -19,6 +19,16 @@ enum CategoryModel: DataStatesProtocol {
     }
 }
 
+enum PromotionModel: DataStatesProtocol {
+    typealias Nested = DataStates<PromotionData>
+    
+    internal struct PromotionData: Decodable {
+        var id: Int?
+        var image_name: String?
+        var description: String?
+    }
+}
+
 //class CategoryModel {
 //    weak var delegate: Downloadable?
 //    

@@ -14,17 +14,26 @@ class EmptyCartView: UIView {
     private var label: UILabel = {
         let label = UILabel()
         label.text = "В вашей корзине пока ничего нет"
-        //label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .emptyCartFont
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private var button: UIButton = {
         let button = UIButton()
         button.setTitle("Выбрать товары", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Cochin ", size: 15)
+        button.titleLabel?.lineBreakMode = .byWordWrapping
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
         button.setTitleColor(.black, for: .normal)
-        button.layer.borderWidth = 0.8
-        //button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .mainColorWithAplha
+        button.layer.cornerRadius = 5.0
         button.addTarget(self, action: #selector(buttonHandler(sender:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -40,11 +49,18 @@ class EmptyCartView: UIView {
     }
     
     @objc private func buttonHandler(sender: UIButton) {
-        parentVC?.emptyButtonHandler(sender: sender)
+        parentVC?.showCategoryViewController()
     }
     
     private func createConstraints() {
-        button.frame = CGRect(x: 100, y: 200, width: 200, height: 100)
-        label.frame = CGRect(x: 30, y: 100, width: Int(UIScreen.main.bounds.width - 30), height: 80)
+        label.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100).isActive = true
+        label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        label.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 2).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        button.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        button.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        button.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
 }

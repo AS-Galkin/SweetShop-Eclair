@@ -12,15 +12,10 @@ final class CartViewModel: ViewModelProtocol {
 
     internal var updateData: ((DataStates<[CartModel.CartData]>) -> Void)?
     internal var updateImage: (([UIImage]) -> Void)?
-    internal var productsInCartArray: [CartModel.CartData]? {
-        didSet {
-            updateDataOnView()
-        }
-    }
+    internal var productsInCartArray: [CartModel.CartData]?
     
     weak var parentVC: CartViewController?
-    
-    
+
     internal var images: [UIImage] = []
     
     
@@ -45,14 +40,29 @@ final class CartViewModel: ViewModelProtocol {
                         self.images.append(image)
                     }
                 }
+                self.updateDataOnView()
             }
         })
     }
     
     func updateDataOnView() {
+
         DispatchQueue.main.async {
-            self.updateData?(.success(self.productsInCartArray!))
-            self.updateImage?(self.images)
+            guard let _ = self.productsInCartArray?.count else {
+                self.parentVC?.emptycartIsHidden = false
+                return
+            }
+            
+            if self.productsInCartArray!.count > 0 {
+                self.parentVC?.emptycartIsHidden = true
+                self.parentVC?.chooseButtonIsEnable = true
+                self.updateData?(.success(self.productsInCartArray!))
+                self.updateImage?(self.images)
+                self.parentVC?.badgeCount = self.productsInCartArray!.count
+            } else {
+                self.parentVC?.emptycartIsHidden = false
+
+            }
         }
     }
     

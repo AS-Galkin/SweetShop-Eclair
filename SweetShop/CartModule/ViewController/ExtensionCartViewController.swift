@@ -21,10 +21,6 @@ extension CartViewController {
         return self.view as? CartView ?? CartView()
     }
     
-    internal func emptyButtonHandler(sender: UIButton) {
-        
-    }
-    
     internal func verbButtonHandler(sender: UIButton) {
         verbVC = VerbViewController()
         navigationController?.pushViewController(verbVC ?? VerbViewController(), animated: true)
@@ -52,6 +48,12 @@ extension CartViewController {
             }
         }
     }
+    
+    internal func showCategoryViewController() {
+        if categoryVC != nil {
+            tabBarController?.selectedIndex = 0
+        }
+    }
 }
 
 extension CartViewController: CartCellDelegate {
@@ -60,6 +62,7 @@ extension CartViewController: CartCellDelegate {
             typeCastCartView().cartCollectionView.deleteItems(at: [indexPath])
             typeCastCartView().cartCollectionView.reloadData()
             viewModel.images.remove(at: indexPath.item)
+            viewModel.updateDataOnView()
             let deletedItem = viewModel.productsInCartArray?.remove(at: indexPath.item)
             if let user = userId {
                 if let request = try? NetworkUploading.shared().request(parameters: ["user_id":user, "product_id":deletedItem?.product_id], url: URIString.downloadURL.rawValue + URIString.apiDeleteCartDataURN.rawValue, uploadData: nil) {

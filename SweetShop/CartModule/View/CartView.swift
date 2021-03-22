@@ -58,6 +58,7 @@ class CartView: UIView {
         case .success(let result):
             dataForUpdate = result
             cartCollectionView.dataSource = self
+            cartCollectionView.reloadData()
             break
         case .failure(let result):
             break
