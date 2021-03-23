@@ -74,8 +74,14 @@ class UserViewController: UIViewController {
     }
     
     internal func loginButtonHandler(selector: UIButton) {
-        let unloggedViewController = UnloggedViewController()
+        let unloggedViewController = LoginViewController()
         unloggedViewController.parentVC = self
         self.navigationController?.pushViewController(unloggedViewController, animated: true)
+    }
+    
+    internal func registerButtonHandler() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let registerVC =  storyBoard.instantiateViewController(identifier: "RegisterTableViewController") as? RegisterTableViewController else { return }
+        self.navigationController?.show(registerVC, sender: nil)
     }
 }

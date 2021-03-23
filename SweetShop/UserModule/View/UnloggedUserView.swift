@@ -30,7 +30,7 @@ class UnloggedUserView: UIView {
         button.layer.cornerRadius = 5.0
         button.backgroundColor = .mainColorWithAplha
         button.translatesAutoresizingMaskIntoConstraints = false
-        //button.frame = CGRect(x: 100, y: 150, width: 150, height: 50)
+        button.addTarget(self, action: #selector(registerButtonHandler), for: .touchUpInside)
         return button
     }()
     
@@ -72,6 +72,10 @@ class UnloggedUserView: UIView {
     
     @objc private func loginButtonHandler(sender: UIButton) {
         delegate?.loginButtonHandler(selector: sender)
+    }
+    
+    @objc private func registerButtonHandler() {
+        delegate?.registerButtonHandler()
     }
     
     required init?(coder: NSCoder) {

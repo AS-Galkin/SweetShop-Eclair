@@ -9,7 +9,7 @@ import UIKit
 
 class LoginView: UIView {
     
-    weak var delegate: UnloggedViewController?
+    weak var delegate: LoginViewController?
     
     internal lazy var loginTextField: UITextField = {
         let textField: UITextField = UITextField()

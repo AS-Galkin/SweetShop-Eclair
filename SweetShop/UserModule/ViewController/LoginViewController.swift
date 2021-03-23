@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UnloggedViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     weak var parentVC: UserViewController?
     var viewModel: UserViewModel!
