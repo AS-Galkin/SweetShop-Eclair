@@ -21,9 +21,14 @@ class RegisterTableViewController: UITableViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    internal weak var parentVC: UserViewController?
+    internal var date: String?
+    
     @IBAction func registerButtonHandler(_ sender: UIButton) {
+        register()
     }
     
+    internal var userViewModel: UserViewModel?
     
     override func loadView() {
         super.loadView()
@@ -31,6 +36,7 @@ class RegisterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingCells()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

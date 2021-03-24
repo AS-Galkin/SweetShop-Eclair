@@ -41,7 +41,8 @@ class SettingUserViewController: UIViewController {
         
         let fields: [String : String?] = ["f_name":typeCastView().name.text, "s_name":typeCastView().surName.text, "address":typeCastView().address.text, "birthday":typeCastView().birthDate.text, "phone":typeCastView().phone.text, "email":typeCastView().email.text, "gender":typeCastView().sexArray[typeCastView().segmentControl!.selectedSegmentIndex]]
         
-        viewModel?.uploadData(parameters: fields, url:  URIString.downloadURL.rawValue + URIString.apiUploadDataURN.rawValue)
+        viewModel?.uploadData(parameters: fields, url:  URIString.downloadURL.rawValue + URIString.apiUploadDataURN.rawValue) { (data) in
+        }
         
         if (UserDefaults.standard.object(forKey: "SavedPerson") != nil) {
             viewModel?.savePersonToUserDefaults(fields: fields)

@@ -26,9 +26,11 @@ final class UserViewModel: ViewModelProtocol {
             return
         }
         let response = try? NetworkLoading.shared().response(urlRequest: request, completion: { (data) in
+            print(String(data: data, encoding: .utf8))
             self.modelData = data
             let decoder = JSONDecoder()
             self.model = try? decoder.decode([UserModel.UserData]?.self, from: data) as [UserModel.UserData]?
+            print(self.model)
         })
         DispatchQueue.main.async {[weak self] in
             if let model = self?.model {
@@ -41,13 +43,11 @@ final class UserViewModel: ViewModelProtocol {
         }
     }
     
-    internal func uploadData(parameters: [String : Any], url: String) {
+    internal func uploadData(parameters: [String : Any], url: String, completion: @escaping (Data) -> Void) {
         
         guard let request = try? NetworkUploading.shared().request(parameters: parameters, url: url) else {return}
         
-        let response = try? NetworkUploading.shared().response(urlRequest: request, completion: { (data) in
-            print(String(data: data, encoding: .utf8))
-        })
+        let response = try? NetworkUploading.shared().response(urlRequest: request, completion: completion)
     }
     
     internal func savePersonToUserDefaults(fields: [String : String?]) {

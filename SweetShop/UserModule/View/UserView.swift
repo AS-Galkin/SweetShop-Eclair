@@ -109,7 +109,7 @@ class UserView: UIView {
             phone = result[0].phone
             break
         case .failure(let result):
-            print("Failure load user data")
+
             break
         }
     }

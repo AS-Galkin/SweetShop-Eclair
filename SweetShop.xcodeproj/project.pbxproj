@@ -56,6 +56,7 @@
 		94A1948625DFF92800C544F7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1948525DFF92800C544F7 /* UserModel.swift */; };
 		94A1948F25E0017300C544F7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1948E25E0017300C544F7 /* UserSettings.swift */; };
 		94A347862609F0A500148824 /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A347852609F0A500148824 /* RegisterTableViewController.swift */; };
+		94A34799260A00D100148824 /* ExtensionRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A34798260A00D100148824 /* ExtensionRegisterTableViewController.swift */; };
 		94B3BA4325E63C2900BA7C32 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4225E63C2900BA7C32 /* UserView.swift */; };
 		94B3BA4825E63C6200BA7C32 /* ExtensionSettingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4725E63C6200BA7C32 /* ExtensionSettingUserView.swift */; };
 		94B3BA4D25E63CBD00BA7C32 /* ExtensionUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */; };
@@ -150,6 +151,7 @@
 		94A1948525DFF92800C544F7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		94A1948E25E0017300C544F7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		94A347852609F0A500148824 /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
+		94A34798260A00D100148824 /* ExtensionRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRegisterTableViewController.swift; sourceTree = "<group>"; };
 		94B3BA4225E63C2900BA7C32 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		94B3BA4725E63C6200BA7C32 /* ExtensionSettingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSettingUserView.swift; sourceTree = "<group>"; };
 		94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				94E9E2142577CD2A00CD5281 /* UserViewController.swift */,
 				949636B725ED1A2900E661DE /* LoginViewController.swift */,
 				94A347852609F0A500148824 /* RegisterTableViewController.swift */,
+				94A34798260A00D100148824 /* ExtensionRegisterTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				9461D5D32594E4E7002EDE0B /* NetworkURL.swift in Sources */,
 				94E9E21A2577D2EA00CD5281 /* CategoryViewController.swift in Sources */,
 				94A1948625DFF92800C544F7 /* UserModel.swift in Sources */,
+				94A34799260A00D100148824 /* ExtensionRegisterTableViewController.swift in Sources */,
 				946232702583BDAF005EA0AD /* CategoryModel.swift in Sources */,
 				9483258D25791714008D1449 /* StringEnums.swift in Sources */,
 				94ED058825F905DD0023CD51 /* VerbView.swift in Sources */,

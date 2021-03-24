@@ -22,4 +22,5 @@ enum URIString: String {
     case apiUpdateCartDataURN = "api/updateCartDataDB.php"
     case apiInsertCartDataURN = "api/insertCartDataDB.php"
     case apiDeleteCartDataURN = "api/deleteCartDataDB.php"
+    case apiRegisterURN = "api/register.php"
 }

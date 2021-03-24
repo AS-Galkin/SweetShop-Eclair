@@ -82,6 +82,7 @@ class UserViewController: UIViewController {
     internal func registerButtonHandler() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let registerVC =  storyBoard.instantiateViewController(identifier: "RegisterTableViewController") as? RegisterTableViewController else { return }
+        registerVC.parentVC = self
         self.navigationController?.show(registerVC, sender: nil)
     }
 }

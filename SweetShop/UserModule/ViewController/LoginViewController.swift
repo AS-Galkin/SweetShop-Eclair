@@ -61,7 +61,9 @@ class LoginViewController: UIViewController {
             parentVC?.navigationController?.popViewController(animated: true)
             break
         case .failure(let result):
-            print("Failure load user data")
+            let alert = UIAlertController(title: "Ошибка", message: "Неверно введен пароль или email", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             break
         }
     }
