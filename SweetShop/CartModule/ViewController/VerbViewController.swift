@@ -16,5 +16,4 @@ class VerbViewController: UIViewController {
     override func loadView() {
         self.view = VerbView()
     }
-
 }

@@ -22,8 +22,10 @@ extension CartViewController {
     }
     
     internal func verbButtonHandler(sender: UIButton) {
-        verbVC = VerbViewController()
-        navigationController?.pushViewController(verbVC ?? VerbViewController(), animated: true)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let verbVC =  storyBoard.instantiateViewController(identifier: "VerbTableViewController") as? VerbTableViewController else { return }
+        //registerVC.parentVC = self
+        self.navigationController?.show(verbVC, sender: nil)
     }
     
     internal func setHowUpdateCartViewData() {

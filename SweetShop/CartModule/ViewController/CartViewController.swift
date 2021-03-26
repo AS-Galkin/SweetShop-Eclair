@@ -74,6 +74,7 @@ class CartViewController: UICollectionViewController {
         if let _ = userId {
             setHowUpdateCartViewData()
         } else {
+            setHowUpdateCartViewData()
             emptycartIsHidden = false
         }
     }
@@ -85,7 +86,6 @@ class CartViewController: UICollectionViewController {
             downloadCartData(userID: user)
         } else {
             getUserId()
-            
             if let user = userId {
                 downloadCartData(userID: user)
             }
