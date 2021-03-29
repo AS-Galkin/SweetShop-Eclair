@@ -24,7 +24,7 @@ extension CartViewController {
     internal func verbButtonHandler(sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let verbVC =  storyBoard.instantiateViewController(identifier: "VerbTableViewController") as? VerbTableViewController else { return }
-        //registerVC.parentVC = self
+        verbVC.cartVC = self
         self.navigationController?.show(verbVC, sender: nil)
     }
     
@@ -44,9 +44,15 @@ extension CartViewController {
     
     internal func cellButtonHandler(productId: Int, amount: Int) {
         if let request = try? NetworkUploading.shared().request(parameters: ["product_id":productId, "amount":amount, "user_id":userId], url: URIString.downloadURL.rawValue + URIString.apiUpdateCartDataURN.rawValue) {
-            
             let response = try? NetworkUploading.shared().response(urlRequest: request) { (data) in
-                print(data)
+            }
+        }
+        
+        var couter = -1
+        for i in viewModel.productsInCartArray! {
+            couter += 1
+            if (i.product_id == productId) {
+                viewModel.productsInCartArray![couter].amount = amount
             }
         }
     }

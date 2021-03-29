@@ -134,7 +134,7 @@ class DetailProductView: UIView {
             //parentViewController?.cartButtonHandler()
             if let cartData = self.cartData {
                 buttonDelegate?.addProduct(product: cartData)
-                sender.setTitle("Добавить еще", for: .normal)
+                sender.setTitle(" +Добавить еще ", for: .normal)
             }
         }
 

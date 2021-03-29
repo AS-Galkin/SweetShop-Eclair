@@ -34,11 +34,12 @@ class LoginViewController: UIViewController {
     }
     
     internal func checkUserInDatabase(login: String, password: String) {
-        let param = ["table":"User","email": login, "password": password, "all":""]
-        viewModel?.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
         viewModel?.updateData = {[weak self] viewData in
             self?.viewData = viewData
         }
+        
+        let param = ["table":"User","email": login, "password": password, "all":""]
+        viewModel?.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
     }
     
     private func typeCastLoginView() -> LoginView {

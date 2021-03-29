@@ -788,25 +788,60 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="62" id="fos-aq-U4O">
-                                        <rect key="frame" x="0.0" y="631.33333206176758" width="375" height="62"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Заказ" id="9J6-5a-1AY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="BdV-QI-cJP">
+                                        <rect key="frame" x="0.0" y="687.33333206176758" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fos-aq-U4O" id="j11-f4-aRI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BdV-QI-cJP" id="SCb-kU-pEg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRh-49-Sj1">
-                                                    <rect key="frame" x="24" y="11" width="327" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Итого:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7c-vB-h0m">
+                                                    <rect key="frame" x="28" y="15" width="52" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kga-8y-FwI">
+                                                    <rect key="frame" x="333" y="4" width="24" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="e7c-vB-h0m" firstAttribute="leading" secondItem="SCb-kU-pEg" secondAttribute="leadingMargin" constant="12" id="50x-wn-OUh"/>
+                                                <constraint firstItem="e7c-vB-h0m" firstAttribute="top" secondItem="SCb-kU-pEg" secondAttribute="topMargin" constant="4" id="Q4Q-B4-hoz"/>
+                                                <constraint firstItem="kga-8y-FwI" firstAttribute="top" secondItem="SCb-kU-pEg" secondAttribute="top" constant="4" id="ZTW-Pf-eI8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e7c-vB-h0m" secondAttribute="bottom" constant="4" id="qo3-hp-5Zd"/>
+                                                <constraint firstAttribute="bottom" secondItem="kga-8y-FwI" secondAttribute="bottom" constant="4" id="tcZ-Dy-GEE"/>
+                                                <constraint firstAttribute="trailing" secondItem="kga-8y-FwI" secondAttribute="trailing" constant="18" id="uNw-Qt-3is"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="ulV-kH-wqD">
+                                        <rect key="frame" x="0.0" y="731.33333206176758" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ulV-kH-wqD" id="UIb-7D-JGf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9G-xu-Eb9">
+                                                    <rect key="frame" x="16" y="1" width="343" height="42"/>
                                                     <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Заказать"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aRh-49-Sj1" secondAttribute="trailing" constant="8" id="3Ox-P2-qel"/>
-                                                <constraint firstItem="aRh-49-Sj1" firstAttribute="leading" secondItem="j11-f4-aRI" secondAttribute="leadingMargin" constant="8" id="Jda-Nr-opC"/>
-                                                <constraint firstItem="aRh-49-Sj1" firstAttribute="top" secondItem="j11-f4-aRI" secondAttribute="topMargin" id="aDF-9n-NkK"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="aRh-49-Sj1" secondAttribute="bottom" id="zzQ-ZM-fUl"/>
+                                                <constraint firstAttribute="trailing" secondItem="S9G-xu-Eb9" secondAttribute="trailing" constant="16" id="Ifh-fb-gVi"/>
+                                                <constraint firstItem="S9G-xu-Eb9" firstAttribute="top" secondItem="UIb-7D-JGf" secondAttribute="top" constant="1" id="PcO-1T-7Fh"/>
+                                                <constraint firstItem="S9G-xu-Eb9" firstAttribute="leading" secondItem="UIb-7D-JGf" secondAttribute="leading" constant="16" id="XWg-T3-gnk"/>
+                                                <constraint firstAttribute="bottom" secondItem="S9G-xu-Eb9" secondAttribute="bottom" constant="1" id="YhI-H9-RRR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -826,9 +861,10 @@
                         <outlet property="inTimeSwitch" destination="5t0-Ua-H84" id="Dhd-YU-UKw"/>
                         <outlet property="myAddressTextField" destination="eBP-a7-9cA" id="oPK-1f-Jnl"/>
                         <outlet property="nameTextField" destination="kTw-6J-DQ3" id="sCt-Oa-3Uc"/>
-                        <outlet property="orderButton" destination="aRh-49-Sj1" id="uR7-Po-GYc"/>
+                        <outlet property="orderButton" destination="S9G-xu-Eb9" id="Jbd-nZ-8JA"/>
                         <outlet property="phoneTextField" destination="RLO-75-hyb" id="Kli-Ph-Ok0"/>
                         <outlet property="soonPossibleSwitch" destination="ts1-VP-oJl" id="XPI-cG-UvD"/>
+                        <outlet property="summPriceLabel" destination="kga-8y-FwI" id="8Kf-jk-6gy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH3-e7-LPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
