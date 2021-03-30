@@ -66,7 +66,6 @@ extension ProductViewController: AddProductToCart {
                         if let request = try? NetworkUploading.shared().request(parameters: ["product_id":products[pos].product_id, "user_id":cartVC!.userId,"amount":products[pos].amount!], url: URIString.downloadURL.rawValue + URIString.apiUpdateCartDataURN.rawValue) {
                             
                             let response = try? NetworkUploading.shared().response(urlRequest: request) { (data) in
-                                print(String(data: data, encoding: .utf8))
                             }
                         }
                         return true

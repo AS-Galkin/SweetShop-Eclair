@@ -41,7 +41,7 @@
 		947D50672582BD4800BD1871 /* ExtensionCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D50662582BD4800BD1871 /* ExtensionCategoryViewController.swift */; };
 		94832575257910BF008D1449 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832574257910BF008D1449 /* CartViewController.swift */; };
 		9483257A257910DF008D1449 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94832579257910DF008D1449 /* ProductViewController.swift */; };
-		9483258825791633008D1449 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258725791633008D1449 /* LocationViewController.swift */; };
+		9483258825791633008D1449 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258725791633008D1449 /* LocationTableViewController.swift */; };
 		9483258D25791714008D1449 /* StringEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483258C25791714008D1449 /* StringEnums.swift */; };
 		949148A3257F69B000498A87 /* SettingUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949148A2257F69B000498A87 /* SettingUserViewController.swift */; };
 		949148AC257F8B2200498A87 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949148AB257F8B2200498A87 /* CategoryCollectionViewCell.swift */; };
@@ -59,6 +59,8 @@
 		94A347862609F0A500148824 /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A347852609F0A500148824 /* RegisterTableViewController.swift */; };
 		94A34799260A00D100148824 /* ExtensionRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A34798260A00D100148824 /* ExtensionRegisterTableViewController.swift */; };
 		94A5CD56260E064700189E7B /* VerbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5CD55260E064700189E7B /* VerbTableViewController.swift */; };
+		94A5F1FA26135DC100A119AD /* AdressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5F1F926135DC100A119AD /* AdressCell.swift */; };
+		94A5F1FF26136D5700A119AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5F1FE26136D5700A119AD /* MapViewController.swift */; };
 		94B3BA4325E63C2900BA7C32 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4225E63C2900BA7C32 /* UserView.swift */; };
 		94B3BA4825E63C6200BA7C32 /* ExtensionSettingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4725E63C6200BA7C32 /* ExtensionSettingUserView.swift */; };
 		94B3BA4D25E63CBD00BA7C32 /* ExtensionUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */; };
@@ -132,7 +134,7 @@
 		947D50662582BD4800BD1871 /* ExtensionCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCategoryViewController.swift; sourceTree = "<group>"; };
 		94832574257910BF008D1449 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		94832579257910DF008D1449 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
-		9483258725791633008D1449 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		9483258725791633008D1449 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
 		9483258C25791714008D1449 /* StringEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnums.swift; sourceTree = "<group>"; };
 		949148A2257F69B000498A87 /* SettingUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUserViewController.swift; sourceTree = "<group>"; };
 		949148AB257F8B2200498A87 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +158,8 @@
 		94A347852609F0A500148824 /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
 		94A34798260A00D100148824 /* ExtensionRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRegisterTableViewController.swift; sourceTree = "<group>"; };
 		94A5CD55260E064700189E7B /* VerbTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbTableViewController.swift; sourceTree = "<group>"; };
+		94A5F1F926135DC100A119AD /* AdressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressCell.swift; sourceTree = "<group>"; };
+		94A5F1FE26136D5700A119AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		94B3BA4225E63C2900BA7C32 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		94B3BA4725E63C6200BA7C32 /* ExtensionSettingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSettingUserView.swift; sourceTree = "<group>"; };
 		94B3BA4C25E63CBD00BA7C32 /* ExtensionUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserViewController.swift; sourceTree = "<group>"; };
@@ -345,6 +349,7 @@
 		946F03BA25816A0200D8DF86 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				94A5F1F926135DC100A119AD /* AdressCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -532,7 +537,8 @@
 		94A1948025DFCCF100C544F7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9483258725791633008D1449 /* LocationViewController.swift */,
+				9483258725791633008D1449 /* LocationTableViewController.swift */,
+				94A5F1FE26136D5700A119AD /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -718,6 +724,7 @@
 				94BBD7B625E7DFCB00B73578 /* UserViewModel.swift in Sources */,
 				9462328E2583C2A0005EA0AD /* Downloadable.swift in Sources */,
 				9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */,
+				94A5F1FA26135DC100A119AD /* AdressCell.swift in Sources */,
 				94CEC0EE25DD2207007EED5B /* ExtensionDetailProductView.swift in Sources */,
 				94B3BA4825E63C6200BA7C32 /* ExtensionSettingUserView.swift in Sources */,
 				949148A3257F69B000498A87 /* SettingUserViewController.swift in Sources */,
@@ -736,7 +743,7 @@
 				94E9E21F2577DAB800CD5281 /* ClassNamePrintable.swift in Sources */,
 				941A8BAC25923BCC00E69CEE /* ExtensionCategoryView.swift in Sources */,
 				945C2EC52595F78B00E6B918 /* ExtensionProductViewController.swift in Sources */,
-				9483258825791633008D1449 /* LocationViewController.swift in Sources */,
+				9483258825791633008D1449 /* LocationTableViewController.swift in Sources */,
 				94A5CD56260E064700189E7B /* VerbTableViewController.swift in Sources */,
 				947D505A2582B98D00BD1871 /* MainSearchBar.swift in Sources */,
 				941A8B932592285500E69CEE /* CategoryViewModel.swift in Sources */,
@@ -745,6 +752,7 @@
 				944BA95525F2315700A67FEE /* CartModel.swift in Sources */,
 				945C2EB32595F71A00E6B918 /* ProductViewModel.swift in Sources */,
 				941A8B9B259229D800E69CEE /* CategoryView.swift in Sources */,
+				94A5F1FF26136D5700A119AD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

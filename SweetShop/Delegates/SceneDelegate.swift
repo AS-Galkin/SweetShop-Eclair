@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let userViewController: UserViewController = UserViewController()
         let categoryViewController: CategoryViewController = CategoryViewController()
         let cartViewController: CartViewController = CartViewController()
-        let locationViewController: LocationViewController = LocationViewController()
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let locationViewController: LocationTableViewController = storyBoard.instantiateViewController(identifier: "LocationTableViewController") as? LocationTableViewController else {return}
         let viewControllerArray: [UIViewController] = [categoryViewController, locationViewController, cartViewController, userViewController]
         cartViewController.categoryVC = categoryViewController
         setTabBarItem(viewControllerArray: viewControllerArray)

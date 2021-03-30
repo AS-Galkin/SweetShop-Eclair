@@ -26,11 +26,9 @@ final class UserViewModel: ViewModelProtocol {
             return
         }
         let response = try? NetworkLoading.shared().response(urlRequest: request, completion: { (data) in
-            print(String(data: data, encoding: .utf8))
             self.modelData = data
             let decoder = JSONDecoder()
             self.model = try? decoder.decode([UserModel.UserData]?.self, from: data) as [UserModel.UserData]?
-            print(self.model)
         })
         DispatchQueue.main.async {[weak self] in
             if let model = self?.model {

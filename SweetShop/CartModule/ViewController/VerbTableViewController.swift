@@ -23,9 +23,12 @@ class VerbTableViewController: UITableViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Применить", for: .normal)
-        button.backgroundColor = .mainColorWithAplha
+        button.backgroundColor = .mainColor
         button.tintColor = .white
         button.addTarget(self, action: #selector(commitButtomHandler(sender:)), for: .touchUpInside)
+        button.layer.cornerRadius = 5.0
+        button.layer.masksToBounds = true
+        
         return button
     }()
     internal var alphaLayerView: UIView?
@@ -44,6 +47,9 @@ class VerbTableViewController: UITableViewController {
     
     override func loadView() {
         super.loadView()
+        if let userid = cartVC?.userId {
+            downloadUserData(userID: userid)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +66,7 @@ class VerbTableViewController: UITableViewController {
         orderButton.layer.masksToBounds = true
         orderButton.backgroundColor = .mainColorWithAplha
         alphaLayerView = UIView()
-        alphaLayerView?.backgroundColor = UIColor(red: 232/255, green: 234/255, blue: 234/355, alpha: 0.2)
+        alphaLayerView?.backgroundColor = UIColor(red: 94/255, green: 95/255, blue: 93/355, alpha: 0.2)
         alphaLayerView?.isHidden = editViewIsHidden
         alphaLayerView?.translatesAutoresizingMaskIntoConstraints = false
         editAddressView = UIView()
@@ -76,8 +82,6 @@ class VerbTableViewController: UITableViewController {
         addAddressButton.addTarget(self, action: #selector(addressButtonHandler(sender:)), for: .touchUpInside)
         userViewModel = UserViewModel()
         setupUserViewModel()
-        if let userid = cartVC?.userId {
-            downloadUserData(userID: userid)
-        }
+
     }
 }

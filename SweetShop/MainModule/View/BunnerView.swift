@@ -45,7 +45,6 @@ class BunnerView: UIView {
         scrollView.contentSize = CGSize(width: CGFloat(frame.width * CGFloat(images.count)), height: frame.height)
         
         for i in images {
-            print(frame)
             let view = createImageView(image: i, frame: frame)
             scrollView.addSubview(view)
             frame.origin.x += frame.size.width

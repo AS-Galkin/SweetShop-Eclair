@@ -41,7 +41,6 @@ final class ProductViewModel: ViewModelProtocol {
                         images.append(image)
                     }
                 }
-                print(images.count)
                 DispatchQueue.main.async {[weak self] in
                     self?.updateData?(.success(model))
                     self?.updateImages?(images)

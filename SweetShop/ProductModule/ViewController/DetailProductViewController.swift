@@ -20,6 +20,5 @@ class DetailProductViewController: UIViewController {
     }
     
     func cartButtonHandler() {
-        print("Add to Cart button was pressed")
     }
 }

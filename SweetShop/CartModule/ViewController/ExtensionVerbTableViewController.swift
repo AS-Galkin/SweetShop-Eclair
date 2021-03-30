@@ -27,10 +27,9 @@ extension VerbTableViewController {
     func calculateSummPrice(cart: [CartModel.CartData]) -> String {
         var price: Float = 0
         for i in cart {
-            print(i)
             price += Float(i.price!)! * Float(i.amount!)
         }
-        return String(price)
+        return String("\(price) \u{20BD}")
     }
     
     func updateDataOnView(data: DataStates<[UserModel.UserData]>) {
@@ -40,11 +39,12 @@ extension VerbTableViewController {
         case .loading(let result):
             break
         case .success(let result):
-            myAddressTextField.text = result[0].address
-            nameTextField.text = "\(result[0].f_name ?? "NO NAME") \(result[0].l_name ?? "NO NAME")"
-            phoneTextField.text = result[0].phone
+            for i in result {
+                myAddressTextField.text = i.address
+                nameTextField.text = "\(i.f_name ?? "NO NAME") \(i.l_name ?? "NO NAME")"
+                phoneTextField.text = i.phone
+            }
             summPriceLabel.text = calculateSummPrice(cart: (cartVC?.viewModel.productsInCartArray)!)
-            self.tableView.setNeedsLayout()
             break
         case .failure(let result):
             break
@@ -70,9 +70,9 @@ extension VerbTableViewController {
         editTextField?.leadingAnchor.constraint(equalTo: editAddressView!.leadingAnchor).isActive = true
         editTextField?.trailingAnchor.constraint(equalTo: editAddressView!.trailingAnchor).isActive = true
         commitButton.topAnchor.constraint(equalTo: editAddressView!.bottomAnchor, constant: 8).isActive = true
-        commitButton.leadingAnchor.constraint(equalTo: editAddressView!.leadingAnchor, constant: 10).isActive = true
-        commitButton.trailingAnchor.constraint(equalTo: editAddressView!.trailingAnchor, constant: -10).isActive = true
-        commitButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        commitButton.leadingAnchor.constraint(equalTo: editAddressView!.leadingAnchor, constant: 30).isActive = true
+        commitButton.trailingAnchor.constraint(equalTo: editAddressView!.trailingAnchor, constant: -30).isActive = true
+        commitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     @objc func addressButtonHandler(sender: UIButton) {
