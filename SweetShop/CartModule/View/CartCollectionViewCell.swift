@@ -35,7 +35,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     }()
     
     internal var deleteCellButton: UIButton = {
-        var button = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        var button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         button.setBackgroundImage(UIImage(named: Icons.deleteIcon.rawValue), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         return button
@@ -103,9 +103,13 @@ class CartCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        layoutView.backgroundColor = .cartCellColor
+        layoutView.backgroundColor = .white
         layoutView.layer.cornerRadius = 5.0
-        layoutView.layer.masksToBounds = true
+        layoutView.layer.masksToBounds = false
+        layoutView.layer.shadowColor = UIColor.black.cgColor
+        layoutView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        layoutView.layer.shadowRadius = 1.0
+        layoutView.layer.shadowOpacity = 0.2
         deleteCellButton.addTarget(self, action: #selector(deleteButtonHandler(sender:)), for: .touchUpInside)
         deleteView.isHidden = !collectionViewIsEditing
         deleteCellButton.center = deleteView.center
@@ -216,7 +220,7 @@ class CartCollectionViewCell: UICollectionViewCell {
             button.titleLabel?.font = UIFont(name: "AvenirNext-HeavyItalic", size: 16)
             button.addTarget(self, action: #selector(plusButtonHandler), for: .touchUpInside)
             button.layer.cornerRadius = 10.0
-            button.backgroundColor = .buttonCellColor
+            button.backgroundColor = .mainColorWithAplha
             return button
         }()
         var minusButton: UIButton = {

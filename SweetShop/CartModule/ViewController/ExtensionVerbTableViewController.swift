@@ -10,18 +10,14 @@ import UIKit
 
 extension VerbTableViewController {
     func setupUserViewModel() {
-        if let _ = userViewModel {
-            userViewModel?.updateData = {[weak self] userData in
-                self?.updateDataOnView(data: userData)
-            }
+        userViewModel.updateData = {[weak self] userData in
+            self?.updateDataOnView(data: userData)
         }
     }
     
     func downloadUserData(userID: Int) {
-        if let _ = userViewModel {
-            let param = ["table":"User", "id": userID, "all":""] as [String : Any]
-            userViewModel?.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
-        }
+        let param = ["table":"User", "id": userID, "all":""] as [String : Any]
+        userViewModel.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetDataURN.rawValue)
     }
     
     func calculateSummPrice(cart: [CartModel.CartData]) -> String {
@@ -45,6 +41,8 @@ extension VerbTableViewController {
                 phoneTextField.text = i.phone
             }
             summPriceLabel.text = calculateSummPrice(cart: (cartVC?.viewModel.productsInCartArray)!)
+            self.tableView.reloadData()
+            self.tableView.setNeedsLayout()
             break
         case .failure(let result):
             break

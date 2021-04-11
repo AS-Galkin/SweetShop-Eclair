@@ -32,7 +32,7 @@ extension CategoryView {
     //MARK: - Make constraints for BannerView
     func makeConstraintsBunnerView() {
         bunnerView.centerXAnchor.constraint(equalTo: mainScrollView.centerXAnchor).isActive = true
-        bunnerView.topAnchor.constraint(equalTo: mainSearchBar.bottomAnchor, constant: 10.0).isActive = true
+        bunnerView.topAnchor.constraint(equalTo: mainSearchBar.bottomAnchor, constant: 7.0).isActive = true
         bunnerView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor, constant: -10).isActive = true
         //bunnerView.bottomAnchor.constraint(equalTo: bunnerView.topAnchor, constant: 100).isActive = true
         bunnerView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 4).isActive = true
@@ -50,10 +50,9 @@ extension CategoryView {
     //MARK: - Make constraints for CategoryCollectionView
     func makeConstraintsCollectionView() {
         categoryCollectionView.centerXAnchor.constraint(equalTo: mainScrollView.centerXAnchor).isActive = true
-        categoryCollectionView.topAnchor.constraint(equalTo: bunnerView.bottomAnchor, constant: 15.0).isActive = true
+        categoryCollectionView.topAnchor.constraint(equalTo: bunnerView.bottomAnchor, constant: 7.0).isActive = true
         categoryCollectionView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor, constant: -10).isActive = true
-        categoryCollectionView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -5).isActive = true
-        //categoryCollectionView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor).isActive = true
+        categoryCollectionView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
     }
 }
 

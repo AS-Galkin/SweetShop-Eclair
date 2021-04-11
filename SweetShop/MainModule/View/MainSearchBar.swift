@@ -14,9 +14,11 @@ class MainSearchBar: UISearchBar {
         placeholder = "Search"
         isTranslucent = false
         barStyle = .default
+        searchBarStyle = .minimal
         showsSearchResultsButton = true
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 10.0
+        layer.borderWidth = 0.0
         //searchTextField.frame.size.height = 170
     }
     

@@ -23,12 +23,16 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.contentView.layer.cornerRadius = 5.0
-        self.contentView.layer.borderWidth = 0.0
-        self.contentView.layer.masksToBounds = true
-        self.contentView.backgroundColor = .categoryCollectionLayerColor
-        //self.contentView.layer.shadowColor = UIColor.black.cgColor
-        //self.contentView.layer.shadowOpacity = 0.3
+        self.backgroundColor = .white
+        layer.cornerRadius = 5.0
+        layer.borderWidth = 0.0
+        //layer.masksToBounds = true
+        contentView.backgroundColor = .categoryCollectionLayerColor
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowRadius = 0.0
+        layer.shadowOpacity = 0.3
         contentView.addSubview(imageView)
         contentView.addSubview(name)
         createConstraintImageView()
@@ -55,16 +59,15 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.layer.cornerRadius = 5.0
-//        imageView.layer.masksToBounds = true
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
     func createConstraintImageView() {
-        imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -2).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -1).isActive = true
         imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30.0).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -1).isActive = true
     }
     
     func createConstraintLabel() {

@@ -39,6 +39,7 @@ class CartViewController: UICollectionViewController {
     internal var badgeCount: Int? {
         didSet {
             self.tabBarItem.badgeValue = String(badgeCount!)
+            self.tabBarItem.badgeColor = .red
             view.setNeedsLayout()
         }
     }

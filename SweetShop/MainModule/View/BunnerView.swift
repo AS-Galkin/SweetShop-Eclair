@@ -25,9 +25,10 @@ class BunnerView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 5.0
         layer.shadowColor = UIColor.black.cgColor
+        backgroundColor = .white
         layer.shadowRadius = 1
         layer.shadowOffset = .zero
-        layer.shadowOpacity = 1.0
+        layer.shadowOpacity = 2.0
         layer.masksToBounds = true
         addSubview(scrollView)
     }

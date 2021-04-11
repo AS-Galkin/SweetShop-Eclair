@@ -12,7 +12,7 @@ enum DatabaseImagePath: String {
 }
 
 enum URIString: String {
-    case downloadURL = "http://10.2.255.100/"
+    case downloadURL = "http://83.149.7.237/"
     //case localURL = "http://10.2.255.100/"
     //case remoteURL = "http://83.149.7.237/"
     case apiGetDataURN = "api/getDataFromDB.php"

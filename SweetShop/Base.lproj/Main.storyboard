@@ -891,8 +891,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="г. Санкт-Петербург ул. Туритская, 28" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAa-jG-Ssf">
                                             <rect key="frame" x="20" y="0.0" width="209" height="36"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="209" id="3fs-6A-9ij"/>
-                                                <constraint firstAttribute="height" constant="36" id="hiZ-KB-6Jj"/>
+                                                <constraint firstAttribute="height" constant="36" id="teA-6q-J9c"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -903,7 +902,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" red="0.92944426749999998" green="0.93358379619999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="209" id="2fn-k3-3cm"/>
+                                                <constraint firstAttribute="height" constant="9.6699999999999999" id="hBz-fb-jnK"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -911,34 +910,45 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тел:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coh-0C-BEK">
                                             <rect key="frame" x="20" y="63" width="27.666666666666671" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="Ixt-hX-w7T"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8-(812)-435-08-11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFG-0a-0z7">
                                             <rect key="frame" x="55.000000000000007" y="63" width="124.66666666666669" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="vUU-9s-Bao"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                             <color key="textColor" name="AccentColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3s-ML-pFo">
                                             <rect key="frame" x="244" y="21" width="43" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="1Xi-eB-CCk"/>
+                                                <constraint firstAttribute="width" constant="43" id="X4j-cG-cjh"/>
+                                            </constraints>
                                             <state key="normal" backgroundImage="phone_icon"/>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="J3s-ML-pFo" firstAttribute="leading" secondItem="dFs-n9-Fco" secondAttribute="trailing" constant="15" id="25T-Yy-Pba"/>
-                                        <constraint firstItem="DAa-jG-Ssf" firstAttribute="top" secondItem="fnL-2g-UW4" secondAttribute="top" id="35f-t7-75h"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="J3s-ML-pFo" secondAttribute="bottom" constant="11" id="CKA-2z-egZ"/>
-                                        <constraint firstItem="coh-0C-BEK" firstAttribute="top" secondItem="dFs-n9-Fco" secondAttribute="bottom" constant="7" id="Egh-dw-5Y1"/>
-                                        <constraint firstAttribute="bottom" secondItem="coh-0C-BEK" secondAttribute="bottom" constant="3" id="J64-5U-JUH"/>
-                                        <constraint firstAttribute="bottom" secondItem="dFG-0a-0z7" secondAttribute="bottom" constant="3" id="TOJ-fc-GfF"/>
-                                        <constraint firstItem="dFs-n9-Fco" firstAttribute="leading" secondItem="fnL-2g-UW4" secondAttribute="leadingMargin" constant="4" id="Yj5-dj-3H0"/>
-                                        <constraint firstItem="dFG-0a-0z7" firstAttribute="leading" secondItem="coh-0C-BEK" secondAttribute="trailing" constant="7.3300000000000001" id="ZHI-Gz-FHL"/>
-                                        <constraint firstItem="DAa-jG-Ssf" firstAttribute="leading" secondItem="fnL-2g-UW4" secondAttribute="leading" constant="20" id="bQP-Pn-evB"/>
-                                        <constraint firstItem="J3s-ML-pFo" firstAttribute="top" secondItem="fnL-2g-UW4" secondAttribute="topMargin" constant="10" id="qZX-Yl-K6k"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="J3s-ML-pFo" secondAttribute="trailing" constant="52.670000000000002" id="r0I-3g-HZ4"/>
-                                        <constraint firstItem="coh-0C-BEK" firstAttribute="leading" secondItem="fnL-2g-UW4" secondAttribute="leading" constant="20" id="zyf-oK-sFh"/>
+                                        <constraint firstItem="dFs-n9-Fco" firstAttribute="top" secondItem="DAa-jG-Ssf" secondAttribute="bottom" constant="10.33" id="5tN-l2-Otf"/>
+                                        <constraint firstItem="dFG-0a-0z7" firstAttribute="leading" secondItem="coh-0C-BEK" secondAttribute="trailing" constant="7.3300000000000001" id="Cez-Mx-4M1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="J3s-ML-pFo" secondAttribute="trailing" constant="52.670000000000002" id="JN9-NE-O5c"/>
+                                        <constraint firstItem="coh-0C-BEK" firstAttribute="leading" secondItem="fnL-2g-UW4" secondAttribute="leading" constant="20" symbolic="YES" id="ORQ-4L-Aw0"/>
+                                        <constraint firstItem="DAa-jG-Ssf" firstAttribute="top" secondItem="fnL-2g-UW4" secondAttribute="top" id="T9b-EH-faT"/>
+                                        <constraint firstItem="coh-0C-BEK" firstAttribute="top" secondItem="dFs-n9-Fco" secondAttribute="bottom" constant="7" id="Vhk-Q0-OGR"/>
+                                        <constraint firstItem="DAa-jG-Ssf" firstAttribute="leading" secondItem="fnL-2g-UW4" secondAttribute="leading" constant="20" symbolic="YES" id="dzb-gI-o8o"/>
+                                        <constraint firstItem="J3s-ML-pFo" firstAttribute="leading" secondItem="DAa-jG-Ssf" secondAttribute="trailing" constant="15" id="fAJ-wh-Pw2"/>
+                                        <constraint firstItem="dFs-n9-Fco" firstAttribute="leading" secondItem="fnL-2g-UW4" secondAttribute="leadingMargin" constant="4" id="grG-Nc-VCK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="J3s-ML-pFo" secondAttribute="bottom" constant="11" id="n73-3z-jqw"/>
+                                        <constraint firstItem="J3s-ML-pFo" firstAttribute="top" secondItem="fnL-2g-UW4" secondAttribute="topMargin" constant="10" id="sXL-SR-8hJ"/>
+                                        <constraint firstItem="dFG-0a-0z7" firstAttribute="top" secondItem="dFs-n9-Fco" secondAttribute="bottom" constant="7" id="tZY-MK-lda"/>
+                                        <constraint firstItem="J3s-ML-pFo" firstAttribute="leading" secondItem="dFs-n9-Fco" secondAttribute="trailing" constant="15" id="z1k-X5-H4e"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

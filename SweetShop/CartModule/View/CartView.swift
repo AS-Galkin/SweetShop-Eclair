@@ -94,6 +94,7 @@ extension CartView: UICollectionViewDataSource {
                   let description = dataForUpdate[indexPath.row].short_description else {return cell}
             
             defer {
+                //cell.layer.
                 cell.parentView = self
                 cell.productId = dataForUpdate[indexPath.row].product_id
                 cell.price = dataForUpdate[indexPath.row].price

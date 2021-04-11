@@ -43,7 +43,7 @@ class VerbTableViewController: UITableViewController {
     }
     
     internal weak var cartVC: CartViewController?
-    internal var userViewModel: UserViewModel?
+    internal var userViewModel: UserViewModel = UserViewModel()
     
     override func loadView() {
         super.loadView()
@@ -66,7 +66,7 @@ class VerbTableViewController: UITableViewController {
         orderButton.layer.masksToBounds = true
         orderButton.backgroundColor = .mainColorWithAplha
         alphaLayerView = UIView()
-        alphaLayerView?.backgroundColor = UIColor(red: 94/255, green: 95/255, blue: 93/355, alpha: 0.2)
+        alphaLayerView?.backgroundColor = UIColor(red: 79/255, green: 79/255, blue: 83/355, alpha: 0.4)
         alphaLayerView?.isHidden = editViewIsHidden
         alphaLayerView?.translatesAutoresizingMaskIntoConstraints = false
         editAddressView = UIView()
@@ -80,8 +80,6 @@ class VerbTableViewController: UITableViewController {
         editAddressView?.addSubview(editTextField!)
         myAddressTextField.isEnabled = false
         addAddressButton.addTarget(self, action: #selector(addressButtonHandler(sender:)), for: .touchUpInside)
-        userViewModel = UserViewModel()
         setupUserViewModel()
-
     }
 }
