@@ -27,7 +27,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     internal var deleteView: UIVisualEffectView = {
         var view = UIVisualEffectView()
         view.effect = UIBlurEffect(style: .light)
-        view.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        view.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         view.layer.cornerRadius = view.frame.width / 2
         view.layer.masksToBounds = true
         view.backgroundColor = .buttonCellColor
