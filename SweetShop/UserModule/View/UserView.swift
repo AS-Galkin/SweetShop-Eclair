@@ -40,26 +40,22 @@ class UserView: UIView {
     }
     
     internal var ordersButton: UIButton = {
-        var button: UIButton = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.borderWidth = 0.6
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowRadius = 1
-        button.layer.shadowOffset = .zero
-        button.layer.shadowOpacity = 1.0
+        let button = UIButton()
         button.setTitle("Заказы", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.layer.cornerRadius = 5.0
+        button.backgroundColor = .mainColorWithAplha
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     internal var helpButton: UIButton = {
-        let button: UIButton = UIButton()
+        let button = UIButton()
+        button.setTitle("Справка", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.layer.cornerRadius = 5.0
+        button.backgroundColor = .mainColorWithAplha
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.borderWidth = 0.6
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowRadius = 1
-        button.layer.shadowOffset = .zero
-        button.layer.shadowOpacity = 1.0
-        button.setTitle("Cправка", for: .normal)
         return button
     }()
     
@@ -71,6 +67,7 @@ class UserView: UIView {
         button.layer.shadowRadius = 1
         button.layer.shadowOffset = .zero
         button.layer.shadowOpacity = 1.0
+        button.layer.cornerRadius = 5.0
         button.setTitleColor(.systemRed, for: .normal)
         button.setTitle("Выход", for: .normal)
         button.addTarget(self, action: #selector(exitButtonHandler(sender:)), for: .touchUpInside)
@@ -104,12 +101,10 @@ class UserView: UIView {
             print("Loading load user data")
             break
         case .success(let result):
-            print("Sucess load user data")
             name = result[0].f_name
             phone = result[0].phone
             break
         case .failure(let result):
-
             break
         }
     }
@@ -176,16 +171,19 @@ class UserView: UIView {
     }
     
     func makeConstraintsButtons() {
+        ordersButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         ordersButton.topAnchor.constraint(equalTo:(profileView?.bottomAnchor)!, constant: 10).isActive = true
         ordersButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        ordersButton.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        ordersButton.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -60).isActive = true
 
+        helpButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         helpButton.topAnchor.constraint(equalTo:ordersButton.bottomAnchor, constant: 10).isActive = true
         helpButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        helpButton.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        helpButton.widthAnchor.constraint(equalTo: self.ordersButton.widthAnchor).isActive = true
 
+        exitProfileButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         exitProfileButton.topAnchor.constraint(equalTo:helpButton.bottomAnchor, constant: 10).isActive = true
         exitProfileButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        exitProfileButton.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        exitProfileButton.widthAnchor.constraint(equalTo: self.ordersButton.widthAnchor).isActive = true
     }
 }

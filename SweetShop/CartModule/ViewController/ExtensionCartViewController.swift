@@ -21,6 +21,10 @@ extension CartViewController {
         return self.view as? CartView ?? CartView()
     }
     
+    internal func sucessOrder() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     internal func verbButtonHandler(sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let verbVC =  storyBoard.instantiateViewController(identifier: "VerbTableViewController") as? VerbTableViewController else { return }

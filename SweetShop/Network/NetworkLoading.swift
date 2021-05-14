@@ -28,19 +28,23 @@ internal final class NetworkLoading {
     }
     
     internal func response(urlRequest: URLRequest, completion: @escaping (_ data: Data) -> Void) throws {
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            guard let data = data,
-                  let response = response as? HTTPURLResponse,
-                  error == nil else {
-                    //throw NSError(domain: "Network", code: 2, userInfo: nil)
-                    return
+        let sessionParam = URLSessionConfiguration.default
+        sessionParam.timeoutIntervalForRequest = 10.0
+        sessionParam.timeoutIntervalForResource = 30.0
+        let session = URLSession(configuration: sessionParam)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            if error != nil {
+                completion("NIL".data(using: .utf8)!)
+            } else {
+                guard let data = data,
+                      let response = response as? HTTPURLResponse else {return}
+                guard (200 ... 3000) ~= response.statusCode else { //check for http errors
+                      print("statusCode should be 2xx, but is \(response.statusCode)")
+                      print("response = \(response)")
+                      return
                   }
-            guard (200 ... 299) ~= response.statusCode else { //check for http errors
-                print("statusCode should be 2xx, but is \(response.statusCode)")
-                print("response = \(response)")
-                return
+                completion(data)
             }
-            completion(data)
         }
         task.resume()
     }

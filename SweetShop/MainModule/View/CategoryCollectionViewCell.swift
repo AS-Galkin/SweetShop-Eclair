@@ -23,16 +23,16 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.backgroundColor = .white
+//        self.backgroundColor = .white
         layer.cornerRadius = 5.0
         layer.borderWidth = 0.0
-        //layer.masksToBounds = true
+        layer.masksToBounds = true
         contentView.backgroundColor = .categoryCollectionLayerColor
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 0.0
-        layer.shadowOpacity = 0.3
+//        layer.masksToBounds = false
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOffset = CGSize(width: 0, height: 2)
+//        layer.shadowRadius = 0.0
+//        layer.shadowOpacity = 0.3
         contentView.addSubview(imageView)
         contentView.addSubview(name)
         createConstraintImageView()

@@ -19,6 +19,13 @@
 		941A8B932592285500E69CEE /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B922592285500E69CEE /* CategoryViewModel.swift */; };
 		941A8B9B259229D800E69CEE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B9A259229D800E69CEE /* CategoryView.swift */; };
 		941A8BAC25923BCC00E69CEE /* ExtensionCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8BAB25923BCC00E69CEE /* ExtensionCategoryView.swift */; };
+		942AA02926414CBC00E12F18 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA02826414CBC00E12F18 /* LocationViewModel.swift */; };
+		942AA02B26414E3B00E12F18 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA02A26414E3B00E12F18 /* LocationModel.swift */; };
+		942AA02D26416AD700E12F18 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA02C26416AD700E12F18 /* SortViewController.swift */; };
+		942AA03126416B1C00E12F18 /* ExtensionSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA03026416B1C00E12F18 /* ExtensionSortViewController.swift */; };
+		942AA03326417FA200E12F18 /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA03226417FA200E12F18 /* SortTableViewCell.swift */; };
+		9438DD49264F0FB300E163F0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438DD48264F0FB300E163F0 /* LoadingView.swift */; };
+		9438DD4B264F156C00E163F0 /* FailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438DD4A264F156B00E163F0 /* FailView.swift */; };
 		9444684D260E174F002C991F /* ExtensionVerbTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9444684C260E174F002C991F /* ExtensionVerbTableViewController.swift */; };
 		944BA95525F2315700A67FEE /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944BA95425F2315700A67FEE /* CartModel.swift */; };
 		9453EBCD25EF92EA00BD4EB6 /* NetworkUploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453EBCC25EF92EA00BD4EB6 /* NetworkUploading.swift */; };
@@ -112,6 +119,13 @@
 		941A8B922592285500E69CEE /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		941A8B9A259229D800E69CEE /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		941A8BAB25923BCC00E69CEE /* ExtensionCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCategoryView.swift; sourceTree = "<group>"; };
+		942AA02826414CBC00E12F18 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		942AA02A26414E3B00E12F18 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		942AA02C26416AD700E12F18 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		942AA03026416B1C00E12F18 /* ExtensionSortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSortViewController.swift; sourceTree = "<group>"; };
+		942AA03226417FA200E12F18 /* SortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTableViewCell.swift; sourceTree = "<group>"; };
+		9438DD48264F0FB300E163F0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9438DD4A264F156B00E163F0 /* FailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailView.swift; sourceTree = "<group>"; };
 		9444684C260E174F002C991F /* ExtensionVerbTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionVerbTableViewController.swift; sourceTree = "<group>"; };
 		944BA95425F2315700A67FEE /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		9453EBCC25EF92EA00BD4EB6 /* NetworkUploading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUploading.swift; sourceTree = "<group>"; };
@@ -226,6 +240,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		9438DD47264F0F0800E163F0 /* SatesViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9438DD48264F0FB300E163F0 /* LoadingView.swift */,
+				9438DD4A264F156B00E163F0 /* FailView.swift */,
+			);
+			path = SatesViewExtension;
+			sourceTree = "<group>";
+		};
 		945C2E9A2595F61000E6B918 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +257,8 @@
 				945C2EC42595F78B00E6B918 /* ExtensionProductViewController.swift */,
 				94C3CD9025DC117100491512 /* DetailProductViewController.swift */,
 				94CEC0F225DD224B007EED5B /* ExtensionDetailProductViewController.swift */,
+				942AA02C26416AD700E12F18 /* SortViewController.swift */,
+				942AA03026416B1C00E12F18 /* ExtensionSortViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -357,6 +382,7 @@
 		946F03BB25816A0600D8DF86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				942AA02A26414E3B00E12F18 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,6 +390,7 @@
 		946F03BC25816A0900D8DF86 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				942AA02826414CBC00E12F18 /* LocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -378,6 +405,7 @@
 				94C3CD8B25DC0C7100491512 /* DetailProductView.swift */,
 				94CEC0ED25DD2207007EED5B /* ExtensionDetailProductView.swift */,
 				94CEC0F725DD23C4007EED5B /* ProductScrollView.swift */,
+				942AA03226417FA200E12F18 /* SortTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -499,6 +527,7 @@
 		949ED42925779BDB00FB69C3 /* SweetShop */ = {
 			isa = PBXGroup;
 			children = (
+				9438DD47264F0F0800E163F0 /* SatesViewExtension */,
 				941A8B84259204C600E69CEE /* Network */,
 				946F03C725816AD900D8DF86 /* Delegates */,
 				946F03C625816ACA00D8DF86 /* Enums */,
@@ -690,6 +719,7 @@
 				940D755A25F76D01004A1F11 /* ExtensionCartViewController.swift in Sources */,
 				94E9E2152577CD2A00CD5281 /* UserViewController.swift in Sources */,
 				945C2E9C2595F65500E6B918 /* ProductView.swift in Sources */,
+				9438DD49264F0FB300E163F0 /* LoadingView.swift in Sources */,
 				94BBD7BB25E7EFD600B73578 /* UnloggedUserView.swift in Sources */,
 				94CEC0F825DD23C4007EED5B /* ProductScrollView.swift in Sources */,
 				940D756E25F7C7C6004A1F11 /* CartCollectionViewCell.swift in Sources */,
@@ -704,6 +734,7 @@
 				94A347862609F0A500148824 /* RegisterTableViewController.swift in Sources */,
 				946EA9C925961348000BA7DB /* SettingUserView.swift in Sources */,
 				945C2EAE2595F70300E6B918 /* ProductCollectionViewCell.swift in Sources */,
+				942AA02D26416AD700E12F18 /* SortViewController.swift in Sources */,
 				949ED42B25779BDB00FB69C3 /* AppDelegate.swift in Sources */,
 				94832575257910BF008D1449 /* CartViewController.swift in Sources */,
 				945C2EB82595F72400E6B918 /* ProductModel.swift in Sources */,
@@ -724,12 +755,15 @@
 				94BBD7B625E7DFCB00B73578 /* UserViewModel.swift in Sources */,
 				9462328E2583C2A0005EA0AD /* Downloadable.swift in Sources */,
 				9462327D2583BF3C005EA0AD /* DataStates.swift in Sources */,
+				942AA03126416B1C00E12F18 /* ExtensionSortViewController.swift in Sources */,
 				94A5F1FA26135DC100A119AD /* AdressCell.swift in Sources */,
+				942AA02926414CBC00E12F18 /* LocationViewModel.swift in Sources */,
 				94CEC0EE25DD2207007EED5B /* ExtensionDetailProductView.swift in Sources */,
 				94B3BA4825E63C6200BA7C32 /* ExtensionSettingUserView.swift in Sources */,
 				949148A3257F69B000498A87 /* SettingUserViewController.swift in Sources */,
 				947D50552582B51400BD1871 /* CategoryCollectionView.swift in Sources */,
 				9461D5D32594E4E7002EDE0B /* NetworkURL.swift in Sources */,
+				942AA03326417FA200E12F18 /* SortTableViewCell.swift in Sources */,
 				94E9E21A2577D2EA00CD5281 /* CategoryViewController.swift in Sources */,
 				94A1948625DFF92800C544F7 /* UserModel.swift in Sources */,
 				94A34799260A00D100148824 /* ExtensionRegisterTableViewController.swift in Sources */,
@@ -747,11 +781,13 @@
 				94A5CD56260E064700189E7B /* VerbTableViewController.swift in Sources */,
 				947D505A2582B98D00BD1871 /* MainSearchBar.swift in Sources */,
 				941A8B932592285500E69CEE /* CategoryViewModel.swift in Sources */,
+				9438DD4B264F156C00E163F0 /* FailView.swift in Sources */,
 				941A8B89259205EB00E69CEE /* ErrorCode.swift in Sources */,
 				9444684D260E174F002C991F /* ExtensionVerbTableViewController.swift in Sources */,
 				944BA95525F2315700A67FEE /* CartModel.swift in Sources */,
 				945C2EB32595F71A00E6B918 /* ProductViewModel.swift in Sources */,
 				941A8B9B259229D800E69CEE /* CategoryView.swift in Sources */,
+				942AA02B26414E3B00E12F18 /* LocationModel.swift in Sources */,
 				94A5F1FF26136D5700A119AD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

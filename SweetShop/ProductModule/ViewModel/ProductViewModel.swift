@@ -26,6 +26,11 @@ final class ProductViewModel: ViewModelProtocol {
     }
     
     func downloadJson(parameters: [String : Any], url: String) {
+        
+        DispatchQueue.main.async {
+            self.updateData?(.loading([] as! [ProductModel.ProductData]))
+        }
+        
         guard let request = try? NetworkLoading.shared().request(parameters: parameters, url: url) else {return}
         let response = try? NetworkLoading.shared().response(urlRequest: request) { (data) in
             let decoder = JSONDecoder()
@@ -45,8 +50,34 @@ final class ProductViewModel: ViewModelProtocol {
                     self?.updateData?(.success(model))
                     self?.updateImages?(images)
                 }
+            } else {
+                DispatchQueue.main.async {
+                    self.updateData?(.failure([] as! [ProductModel.ProductData]))
+                }
             }
         }
+    }
+    
+    func sortModel(sortClosure: (_ leftValue: ProductModel.ProductData, _ rightValue: ProductModel.ProductData) -> Bool) -> [ProductModel.ProductData]? {
+        DispatchQueue.main.async {
+            self.updateData?(.loading([] as! [ProductModel.ProductData]))
+        }
+        var images: [UIImage] = []
+        let sortModel = model?.sorted(by: sortClosure)
+        if let model = sortModel {
+            for i in model {
+                let imageURL = URL(string: URIString.downloadURL.rawValue + (i.productData?.sweetness?.swImage?.imName)!)!
+                let image = try? UIImage(data: Data(contentsOf: imageURL))
+                if let image = image {
+                    images.append(image)
+                }
+            }
+            DispatchQueue.main.async {[weak self] in
+                self?.updateData?(.success(model))
+                self?.updateImages?(images)
+            }
+        }
+        return model
     }
     
     func addProductToCart(product: CartModel.CartData?, searchProduct: (_ product: inout [CartModel.CartData]) -> Bool) {

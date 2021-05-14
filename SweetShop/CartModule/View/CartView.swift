@@ -18,7 +18,8 @@ class CartView: UIView {
     internal lazy var dataForUpdate: [CartModel.CartData] = []
     
     internal lazy var images: [UIImage] = []
-    
+    internal lazy var loadingView = LoadingView(frame: UIScreen.main.bounds)
+    internal lazy var failView = FailView(frame: UIScreen.main.bounds)
     var viewData: DataStates<[CartModel.CartData]> = .initial {
         didSet {
             updateData()
@@ -53,14 +54,22 @@ class CartView: UIView {
         switch viewData {
         case .initial:
             break
-        case .loading(let result):
-            break
         case .success(let result):
+            if loadingView.isDescendant(of: self) {
+                loadingView.removeFromSuperview()
+            }
             dataForUpdate = result
             cartCollectionView.dataSource = self
             cartCollectionView.reloadData()
             break
-        case .failure(let result):
+        case .loading(_):
+            addSubview(loadingView)
+            break
+        case .failure(_):
+            if loadingView.isDescendant(of: self) {
+                loadingView.removeFromSuperview()
+            }
+            addSubview(failView)
             break
         }
     }

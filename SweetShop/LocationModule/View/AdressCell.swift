@@ -12,5 +12,5 @@ class AdressCell: UITableViewCell {
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var workTimeLabel: UILabel!
-    @IBOutlet weak var addressLabel: UIView!
+    @IBOutlet weak var addressLabel: UILabel!
 }

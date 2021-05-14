@@ -23,11 +23,16 @@ final class CartViewModel: ViewModelProtocol {
     }
     
     func downloadJson(parameters: [String : Any], url: String) {
+        
+        DispatchQueue.main.async {
+            self.updateData?(.loading([] as! [CartModel.CartData]))
+        }
+        
         guard let request = try? NetworkLoading.shared().request(parameters: parameters, url: url) else {
             return
         }
         
-        let response = try? NetworkLoading.shared().response(urlRequest: request, completion: { (data) in
+        let _ = try? NetworkLoading.shared().response(urlRequest: request, completion: { (data) in
             self.images = []
             if let jsonCart = try? JSONDecoder().decode([CartModel.CartData].self, from: data) {
                 self.productsInCartArray = []
@@ -41,6 +46,10 @@ final class CartViewModel: ViewModelProtocol {
                     }
                 }
                 self.updateDataOnView()
+            } else {
+                DispatchQueue.main.async {
+                    self.updateData?(.failure([] as! [CartModel.CartData]))
+                }
             }
         })
     }

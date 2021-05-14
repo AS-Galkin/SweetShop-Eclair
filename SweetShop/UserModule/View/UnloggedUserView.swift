@@ -19,7 +19,6 @@ class UnloggedUserView: UIView {
         button.layer.cornerRadius = 5.0
         button.backgroundColor = .mainColorWithAplha
         button.translatesAutoresizingMaskIntoConstraints = false
-        //button.frame = CGRect(x: 100, y: 50, width: 150, height: 50)
         return button
     }()
     

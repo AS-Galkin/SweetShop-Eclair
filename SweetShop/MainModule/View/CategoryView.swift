@@ -14,6 +14,8 @@ final class CategoryView: UIView {
     internal lazy var mainScrollView = MainScrollView()
     internal lazy var bunnerView = BunnerView()
     internal lazy var dataForUpdate: [CategoryModel.CategoryData] = []
+    internal lazy var loadingView = LoadingView(frame: UIScreen.main.bounds)
+    internal lazy var failView = FailView(frame: UIScreen.main.bounds)
     var viewImages: [UIImage] = [] {
         didSet {
             setNeedsLayout()
@@ -45,18 +47,26 @@ final class CategoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override func setNeedsLayout() {
         super.layoutSubviews()
         switch viewData {
         case .initial:
             print("INITIAL STATE")
             break
         case .success(let result):
+            if loadingView.isDescendant(of: self) {
+                loadingView.removeFromSuperview()
+            }
             dataForUpdate = result
             categoryCollectionView.dataSource = self
         case .loading(let result):
+            addSubview(loadingView)
             break
         case .failure(let result):
+            if loadingView.isDescendant(of: self) {
+                loadingView.removeFromSuperview()
+            }
+            addSubview(failView)
             break
         }
     }

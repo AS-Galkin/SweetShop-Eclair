@@ -104,7 +104,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         layoutView.layer.shadowColor = UIColor.black.cgColor
         layoutView.layer.shadowOffset = CGSize(width: 0, height: 2)
         layoutView.layer.shadowRadius = 0.0
-        layoutView.layer.shadowOpacity = 0.3
+        layoutView.layer.shadowOpacity = 0.2
         contentView.addSubview(layoutView)
         layoutView.addSubview(imageView)
         layoutView.addSubview(descriptionLabel)

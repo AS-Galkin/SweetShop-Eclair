@@ -38,9 +38,11 @@ extension VerbTableViewController {
             for i in result {
                 myAddressTextField.text = i.address
                 nameTextField.text = "\(i.f_name ?? "NO NAME") \(i.l_name ?? "NO NAME")"
-                phoneTextField.text = i.phone
+                phoneTextField?.text = i.phone
             }
-            summPriceLabel.text = calculateSummPrice(cart: (cartVC?.viewModel.productsInCartArray)!)
+            
+            let price = calculateSummPrice(cart: (cartVC?.viewModel.productsInCartArray)!)
+            submitButton.setTitle("Итого: \(price)", for: .normal)
             self.tableView.reloadData()
             self.tableView.setNeedsLayout()
             break
@@ -73,6 +75,13 @@ extension VerbTableViewController {
         commitButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
+    internal func createConstrainstSubmintButton() {
+        submitButton.bottomAnchor.constraint(equalTo: self.tableView.safeAreaLayoutGuide.bottomAnchor, constant: -8).isActive = true
+        submitButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        submitButton.widthAnchor.constraint(equalTo: self.tableView.widthAnchor, constant: -30).isActive = true
+        submitButton.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor).isActive = true
+    }
+    
     @objc func addressButtonHandler(sender: UIButton) {
         editViewIsHidden = false
         self.tableView.bringSubviewToFront(alphaLayerView!)
@@ -89,5 +98,14 @@ extension VerbTableViewController {
     
     @objc func editTextFieldHandler(sender: UITextField) {
 
+    }
+    
+    @objc func submitButtonHandler(sender: UIButton) {
+        let alert = UIAlertController(title: "Подтверждение", message: "Заказ успешно создан", preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "OK", style: .cancel) { action in
+            self.cartVC?.sucessOrder()
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -11,7 +11,8 @@ class ProductView: UIView {
     internal lazy var productCollectionView = ProductCollectionView()
     
     internal var parentVC: ProductViewController?
-    
+    internal lazy var loadingView = LoadingView(frame: UIScreen.main.bounds)
+    internal lazy var failView = FailView(frame: UIScreen.main.bounds)
     var viewData: DataStates<[ProductModel.ProductData]> = .initial {
         didSet {
             setNeedsLayout()
@@ -44,13 +45,21 @@ class ProductView: UIView {
             print("INITIAL STATE")
             break
         case .success(let result):
-            print("SUCESS")
+            if loadingView.isDescendant(of: self) {
+                loadingView.removeFromSuperview()
+            }
             dataForUpdate = result
             productCollectionView.dataSource = self
+            productCollectionView.reloadData()
             break
-        case .loading(let result):
+        case .loading(_):
+            addSubview(loadingView)
             break
-        case .failure(let result):
+        case .failure(_):
+            if loadingView.isDescendant(of: self) {
+                loadingView.removeFromSuperview()
+            }
+            addSubview(failView)
             break
         }
     }

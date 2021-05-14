@@ -23,6 +23,7 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: Icons.sortIcon.rawValue), style: .plain, target: self, action: #selector(sortButtonHandler))
         downloadJsonData()
         bindCollectionViewDelegate()
     }
@@ -40,5 +41,45 @@ class ProductViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+    }
+    
+    @objc func sortButtonHandler() {
+        let sort = SortViewController()
+        sort.parentVC = self
+        sort.preferredContentSize = CGSize(width: 200, height: 200)
+        sort.modalPresentationStyle = .overCurrentContext
+        sort.modalTransitionStyle = .crossDissolve
+        self.present(sort, animated: true, completion: nil)
+    }
+    
+    func sortVCHandler(sortData: Sort) {
+        self.dismiss(animated: true, completion: nil)
+        switch sortData.rule {
+        case "Сначала дешевле":
+            let _: [ProductModel.ProductData]? = productViewModel.sortModel(sortClosure: { left, right in
+                guard let lhs = left.productData?.price,
+                      let rhs = right.productData?.price else {return false}
+                return Double(lhs)! < Double(rhs)!
+            })
+            break
+        case "Сначала дороже":
+            let _: [ProductModel.ProductData]? = productViewModel.sortModel(sortClosure: { left, right in
+                guard let lhs = left.productData?.price,
+                      let rhs = right.productData?.price else {return false}
+                return Double(lhs)! > Double(rhs)!
+            })
+            break
+        case "По популярности":
+            break
+        case "По алфавиту":
+            let _: [ProductModel.ProductData]? = productViewModel.sortModel(sortClosure: { left, right in
+                guard let lhs = left.productData?.sweetness?.swName,
+                      let rhs = right.productData?.sweetness?.swName else {return false}
+                return lhs < rhs
+            })
+            break
+        default:
+            break
+        }
     }
 }

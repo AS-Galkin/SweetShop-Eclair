@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let cartViewController: CartViewController = CartViewController()
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let locationViewController: LocationTableViewController = storyBoard.instantiateViewController(identifier: "LocationTableViewController") as? LocationTableViewController else {return}
+        locationViewController.setupUpdateData()
+        locationViewController.startDownloading()
         let viewControllerArray: [UIViewController] = [categoryViewController, locationViewController, cartViewController, userViewController]
         cartViewController.categoryVC = categoryViewController
         setTabBarItem(viewControllerArray: viewControllerArray)
