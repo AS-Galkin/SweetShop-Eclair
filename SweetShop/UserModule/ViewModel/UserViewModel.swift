@@ -53,11 +53,11 @@ final class UserViewModel: ViewModelProtocol {
         
         guard var model = model else {return}
         
-        model[0].address = fields["address"]!
-        model[0].f_name = fields["f_name"]!
-        model[0].s_name = fields["s_name"]!
-        model[0].phone = fields["phone"]!
-        model[0].birthday = Int(fields["birthday"]! ?? "0")
+        model[0].address = fields["address"] ?? ""
+        model[0].f_name = fields["f_name"] ?? ""
+        model[0].s_name = fields["s_name"] ?? ""
+        model[0].phone = fields["phone"] ?? ""
+        model[0].birthday = Int((fields["birthday"] ?? "0") ?? "0")
         model[0].gender = fields["gender"]!
 
         for i in model {

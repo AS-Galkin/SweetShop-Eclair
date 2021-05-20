@@ -62,8 +62,12 @@ class UserViewController: UIViewController {
     }
     
     @objc private func settingButtonHandler(selector: UIBarButtonItem) {
-        let settingVC = SettingUserViewController()
-        self.navigationController?.pushViewController(settingVC, animated: true)
+//        let settingVC = SettingUserViewController()
+//        self.navigationController?.pushViewController(settingVC, animated: true)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let settingsVC =  storyBoard.instantiateViewController(identifier: "SettingsTableViewController") as? SettingsTableViewController else { return }
+        //settingsVC.parentVC = self
+        self.navigationController?.show(settingsVC, sender: nil)
         
     }
     

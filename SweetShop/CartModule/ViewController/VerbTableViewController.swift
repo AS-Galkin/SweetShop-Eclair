@@ -71,6 +71,11 @@ class VerbTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = .tableHeaderFont
+        header.textLabel?.textColor = .black
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

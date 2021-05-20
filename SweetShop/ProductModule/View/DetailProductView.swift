@@ -21,6 +21,8 @@ class DetailProductView: UIView {
     internal lazy var textView: UITextView = UITextView()
     internal lazy var addToCartView: AddToCartView = AddToCartView()
     internal lazy var productNameLabel: UILabel = UILabel()
+    internal lazy var manufacturerLabel: UILabel = UILabel()
+    internal lazy var weightLabel: UILabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -45,6 +47,10 @@ class DetailProductView: UIView {
         addToCartView.layer.shadowOffset = .zero
         addToCartView.layer.shadowOpacity = 1.0
         scrollView.addSubview(addToCartView)
+
+        
+        
+        
         makeConstraintAddToCartView()
         addToCartView.makeConstraints()
         addToCartView.settingCartButton()
@@ -58,13 +64,26 @@ class DetailProductView: UIView {
         }
         
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        textView.textAlignment = .justified
         textView.text = (product?.productData?.sweetness?.swDescription) ?? "No data"
         
         productNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        productNameLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        productNameLabel.text = (product?.productData?.sweetness?.swName) ?? "No data"
+        productNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        productNameLabel.text = (product?.productData?.sweetness?.swShortDescription) ?? "No data"
         scrollView.addSubview(productNameLabel)
+        
+        manufacturerLabel.font = UIFont.systemFont(ofSize: 9, weight: .light)
+        manufacturerLabel.text = "Производитель: \(product?.productData?.manufacturer?.manName ?? "No data")"
+        
+        weightLabel.font = UIFont.systemFont(ofSize:10, weight: .light)
+        weightLabel.text = "Вес: \(product?.productData?.sweetness?.swWeight ?? "No data") грамм"
+        
+        scrollView.addSubview(manufacturerLabel)
+        scrollView.addSubview(weightLabel)
+        
         makeConstraintsProductNameLabel()
+        makeLableConstraints()
         scrollView.addSubview(textView)
         makeTextViewConstraints()
     }
@@ -112,7 +131,6 @@ class DetailProductView: UIView {
         }
         
         func makeConstraints() {
-            //addToCartButton.clipsToBounds = false
             addToCartButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
             addToCartButton.frame.size.width = self.frame.size.width / 2
            // addToCartButton.frame.size.height = self.frame.size.height - 10

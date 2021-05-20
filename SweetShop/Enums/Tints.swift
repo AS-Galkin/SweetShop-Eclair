@@ -21,5 +21,7 @@ extension UIColor {
 extension UIFont {
     static var emptyCartFont: UIFont { return UIFont(name: "ChalkboardSE-Bold", size: 22) ?? UIFont()}
     static var categoryFont: UIFont { return UIFont(name: "Copperplate", size: 16) ?? UIFont()}
-    static var sortFont: UIFont { return UIFont(name: "Cochin", size: 17) ?? UIFont()}
+    static var sortFont: UIFont { return UIFont(name: "AppleSDGothicNeo-Regular", size: 15) ?? UIFont()}
+    static var lostPasswdFont: UIFont {return UIFont(name: "AlNile", size: 17) ?? UIFont()}
+    static var tableHeaderFont: UIFont {return UIFont(name: "AlNile-Bold", size: 13) ?? UIFont()}
 }

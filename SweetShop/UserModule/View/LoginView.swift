@@ -43,7 +43,7 @@ class LoginView: UIView {
         button.setTitle("Войти", for: .normal)
         button.backgroundColor = .mainColorWithAplha
         button.layer.cornerRadius = 5.0
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.resignFirstResponder()
         return button
     }()

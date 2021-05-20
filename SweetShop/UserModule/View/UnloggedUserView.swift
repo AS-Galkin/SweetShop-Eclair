@@ -15,7 +15,7 @@ class UnloggedUserView: UIView {
     internal var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Войти", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5.0
         button.backgroundColor = .mainColorWithAplha
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +25,7 @@ class UnloggedUserView: UIView {
     internal var registerButton: UIButton = {
         let button = UIButton()
         button.setTitle("Регистрация", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5.0
         button.backgroundColor = .mainColorWithAplha
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -42,12 +42,24 @@ class UnloggedUserView: UIView {
         return textView
     }()
     
+    internal var lostPasswdTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "Забыли логин или пароль?"
+        textView.textColor = .mainColor
+        textView.font = .lostPasswdFont
+        textView.textAlignment = .center
+        textView.isEditable = false
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .white
         addSubview(loginButton)
         addSubview(registerButton)
         addSubview(textView)
+        addSubview(lostPasswdTextView)
         loginButton.addTarget(self, action: #selector(loginButtonHandler(sender:)), for: .touchUpInside)
         createConstraints()
     }
@@ -67,6 +79,11 @@ class UnloggedUserView: UIView {
         registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 5).isActive = true
         registerButton.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100).isActive = true
         registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        lostPasswdTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        lostPasswdTextView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        lostPasswdTextView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100).isActive = true
+        lostPasswdTextView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     @objc private func loginButtonHandler(sender: UIButton) {

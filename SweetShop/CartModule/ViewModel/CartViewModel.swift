@@ -59,6 +59,7 @@ final class CartViewModel: ViewModelProtocol {
         DispatchQueue.main.async {
             guard let _ = self.productsInCartArray?.count else {
                 self.parentVC?.emptycartIsHidden = false
+
                 return
             }
             
@@ -69,9 +70,12 @@ final class CartViewModel: ViewModelProtocol {
                 self.updateImage?(self.images)
                 self.parentVC?.badgeCount = self.productsInCartArray!.count
             } else {
+//                if ((self.parentVC?.typeCastCartView().loadingView.isDescendant(of: self.parentVC!.typeCastCartView())) != nil) {
+//                    self.parentVC?.typeCastCartView().loadingView.removeFromSuperview()
+//                }
+                self.updateData?(.success([] as! [CartModel.CartData]))
                 self.parentVC?.emptycartIsHidden = false
                 self.parentVC?.typeCastCartView().collectionViewIsInEditing = false
-
             }
         }
     }

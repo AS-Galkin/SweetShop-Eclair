@@ -46,7 +46,7 @@ class ProductViewController: UIViewController {
     @objc func sortButtonHandler() {
         let sort = SortViewController()
         sort.parentVC = self
-        sort.preferredContentSize = CGSize(width: 200, height: 200)
+        sort.preferredContentSize = CGSize(width: 200, height: 180)
         sort.modalPresentationStyle = .overCurrentContext
         sort.modalTransitionStyle = .crossDissolve
         self.present(sort, animated: true, completion: nil)
@@ -81,5 +81,10 @@ class ProductViewController: UIViewController {
         default:
             break
         }
+    }
+    //MARK: - CONNECTION
+    func downloadJsonData() {
+        let param = ["name":selectedProduct?.name ?? "Cakes"]
+        productViewModel.downloadJson(parameters: param, url: URIString.downloadURL.rawValue + URIString.apiGetProductDataURN.rawValue)
     }
 }

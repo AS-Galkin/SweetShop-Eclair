@@ -52,16 +52,16 @@ class SortViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setupViews() {
         createSorts()
         sortTableView.backgroundColor = .white
-        sortTableView.layer.cornerRadius = 5.0
-        sortTableView.layer.borderWidth = 0.7
+        sortTableView.layer.cornerRadius = 10.0
+        //sortTableView.layer.borderWidth = 0.
         sortTableView.register(SortTableViewCell.self, forCellReuseIdentifier: "SortCell")
         sortTableView.translatesAutoresizingMaskIntoConstraints = false
-        sortTableView.separatorColor = .clear
+        sortTableView.separatorColor = .lightGray
         
         view.addSubview(sortTableView)
         view.bringSubviewToFront(sortTableView)
         
-        sortTableView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        sortTableView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         sortTableView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         sortTableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 55).isActive = true
         sortTableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
@@ -72,12 +72,18 @@ class SortViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 30
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath as IndexPath) as! SortTableViewCell
         cell.sort = sorts[indexPath.row]
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
+        if (indexPath.row == self.sorts.count-1) {
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

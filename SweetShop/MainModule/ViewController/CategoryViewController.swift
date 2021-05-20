@@ -16,6 +16,7 @@ class CategoryViewController: UIViewController {
     
     override func loadView() {
         self.view = CategoryView()
+        typeCastView().parentVC = self
     }
     
     override func viewDidLoad() {

@@ -9,6 +9,23 @@ import Foundation
 import UIKit
 
 extension DetailProductView {
+    
+    internal func makeLableConstraints() {
+        manufacturerLabel.translatesAutoresizingMaskIntoConstraints = false
+        weightLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        manufacturerLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 5).isActive = true
+        manufacturerLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        manufacturerLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
+        manufacturerLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 2 - 10).isActive = true
+        
+        weightLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 5).isActive = true
+        weightLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        weightLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 2  - 10).isActive = true
+        weightLabel.leadingAnchor.constraint(equalTo: manufacturerLabel.trailingAnchor, constant: 5).isActive = true
+        
+    }
+    
     internal func makeImageViewConstraints() {
         imageView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
@@ -16,9 +33,10 @@ extension DetailProductView {
     }
     
     internal func makeTextViewConstraints() {
-        textView.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 5).isActive = true
+        textView.topAnchor.constraint(equalTo: manufacturerLabel.bottomAnchor, constant: 5).isActive = true
         textView.bottomAnchor.constraint(equalTo: addToCartView.topAnchor, constant: -5).isActive = true
-        textView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        textView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5).isActive = true
+        textView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -10).isActive = true
         
     }
     internal func makeConstraintsScrollView() {
@@ -35,8 +53,9 @@ extension DetailProductView {
     }
     
     internal func makeConstraintsProductNameLabel() {
-        productNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5).isActive = true
-        productNameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        productNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+        productNameLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         productNameLabel.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        productNameLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
     }
 }

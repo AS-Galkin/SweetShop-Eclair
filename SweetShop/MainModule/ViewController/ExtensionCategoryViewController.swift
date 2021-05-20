@@ -8,6 +8,9 @@
 import UIKit
 
 extension CategoryViewController {
+    func reloadDataWhenFailure() {
+        downloadJsonData()
+    }
     
     //MARK: - CONNECTION
     func downloadJsonData() {
@@ -75,6 +78,7 @@ extension CategoryViewController {
         
         navigationController?.pushViewController(productVC, animated: true)
     }
+    
 }
 
 

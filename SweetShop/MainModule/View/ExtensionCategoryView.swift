@@ -75,3 +75,45 @@ extension CategoryView: UICollectionViewDataSource {
         }
     }
 }
+extension CategoryView: UISearchBarDelegate {
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        let productVC = SearchedProductViewController()
+//        productVC.searchProduct = te
+//
+//        if let poductData = productData {
+//            productVC.selectedProduct = productData
+//        }
+//
+//        navigationController?.pushViewController(productVC, animated: true)
+//    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if mainSearchBar.text?.count ?? 0 > 0 {
+            let productVC = SearchedProductViewController()
+            productVC.searchProduct = mainSearchBar.text!.lowercased()
+            mainSearchBar.resignFirstResponder()
+            parentVC?.show(productVC, sender: nil)
+        } else {
+            mainSearchBar.resignFirstResponder()
+        }
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        addGestureRecognizer(tap)
+        return true
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        removeGestureRecognizer(tap)
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        mainSearchBar.resignFirstResponder()
+    }
+    
+    @objc func tapRecognizerHandler(sender: UITapGestureRecognizer) {
+        mainSearchBar.resignFirstResponder()
+    }
+    
+}

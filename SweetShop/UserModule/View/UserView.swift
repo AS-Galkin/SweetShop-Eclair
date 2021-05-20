@@ -42,7 +42,7 @@ class UserView: UIView {
     internal var ordersButton: UIButton = {
         let button = UIButton()
         button.setTitle("Заказы", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5.0
         button.backgroundColor = .mainColorWithAplha
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +52,7 @@ class UserView: UIView {
     internal var helpButton: UIButton = {
         let button = UIButton()
         button.setTitle("Справка", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5.0
         button.backgroundColor = .mainColorWithAplha
         button.translatesAutoresizingMaskIntoConstraints = false

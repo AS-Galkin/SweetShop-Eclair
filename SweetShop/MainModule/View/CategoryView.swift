@@ -16,11 +16,13 @@ final class CategoryView: UIView {
     internal lazy var dataForUpdate: [CategoryModel.CategoryData] = []
     internal lazy var loadingView = LoadingView(frame: UIScreen.main.bounds)
     internal lazy var failView = FailView(frame: UIScreen.main.bounds)
+    var tap:UITapGestureRecognizer = UITapGestureRecognizer()
     var viewImages: [UIImage] = [] {
         didSet {
             setNeedsLayout()
         }
     }
+    weak var parentVC: CategoryViewController?
     
     
     var viewData: DataStates<[CategoryModel.CategoryData]> = .initial {
@@ -41,6 +43,8 @@ final class CategoryView: UIView {
         makeConstrainstMainSearchBar()
         makeConstraintsBunnerView()
         makeConstraintsCollectionView()
+        tap = UITapGestureRecognizer(target: self, action: #selector(tapRecognizerHandler(sender:)))
+        tap.numberOfTapsRequired = 1
     }
     
     required init?(coder: NSCoder) {
@@ -59,6 +63,7 @@ final class CategoryView: UIView {
             }
             dataForUpdate = result
             categoryCollectionView.dataSource = self
+            mainSearchBar.delegate = self
         case .loading(let result):
             addSubview(loadingView)
             break
@@ -67,7 +72,12 @@ final class CategoryView: UIView {
                 loadingView.removeFromSuperview()
             }
             addSubview(failView)
+            failView.refreshButton.addTarget(self, action: #selector(refreshuttonHandler), for: .touchUpInside)
             break
         }
+    }
+    
+    @objc func refreshuttonHandler() {
+        parentVC?.reloadDataWhenFailure()
     }
 }

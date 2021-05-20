@@ -13,7 +13,7 @@ extension RegisterTableViewController {
         nameTextField.becomeFirstResponder()
         registerButton.layer.cornerRadius = 5.0
         registerButton.backgroundColor = .mainColorWithAplha
-        registerButton.tintColor = .black
+        registerButton.tintColor = .white
         passwordTextField.isSecureTextEntry = true
         repeatePasswordTextField.isSecureTextEntry = true
         birthdayDatePicker.datePickerMode = .date

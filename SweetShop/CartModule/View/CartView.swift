@@ -29,7 +29,7 @@ class CartView: UIView {
     internal var verBbutton: UIButton = {
         let button = UIButton()
         button.setTitle("К оформлению", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.layer.borderWidth = 0.3
         button.backgroundColor = .mainColorWithAplha
         button.layer.cornerRadius = 5.0
@@ -69,6 +69,7 @@ class CartView: UIView {
             if loadingView.isDescendant(of: self) {
                 loadingView.removeFromSuperview()
             }
+            cartCollectionView.isHidden = true
             addSubview(failView)
             break
         }

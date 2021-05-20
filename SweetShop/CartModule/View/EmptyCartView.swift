@@ -29,7 +29,7 @@ class EmptyCartView: UIView {
         button.titleLabel?.lineBreakMode = .byWordWrapping
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.textAlignment = .center
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .mainColorWithAplha
         button.layer.cornerRadius = 5.0
         button.addTarget(self, action: #selector(buttonHandler(sender:)), for: .touchUpInside)
