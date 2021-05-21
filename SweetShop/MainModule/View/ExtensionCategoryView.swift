@@ -90,7 +90,8 @@ extension CategoryView: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         if mainSearchBar.text?.count ?? 0 > 0 {
             let productVC = SearchedProductViewController()
-            productVC.searchProduct = mainSearchBar.text!.lowercased()
+            let str = "*\(mainSearchBar.text!.lowercased())* *\(mainSearchBar.text!.capitalized)*"
+            productVC.searchProduct = str
             mainSearchBar.resignFirstResponder()
             parentVC?.show(productVC, sender: nil)
         } else {
