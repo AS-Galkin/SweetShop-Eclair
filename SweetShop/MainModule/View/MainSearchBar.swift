@@ -11,7 +11,7 @@ class MainSearchBar: UISearchBar {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         searchBarStyle = .prominent
-        placeholder = "Search"
+        placeholder = "Поиск"
         isTranslucent = false
         barStyle = .default
         searchBarStyle = .minimal

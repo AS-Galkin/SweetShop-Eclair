@@ -33,7 +33,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.backgroundColor = UIColor(white: 1, alpha: 0)
         label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 7, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 2
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -147,25 +149,25 @@ class ProductCollectionViewCell: UICollectionViewCell {
     private func createConstraintsImageView() {
         imageView.topAnchor.constraint(equalTo: layoutView.topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: layoutView.leadingAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: layoutView.bottomAnchor, constant: -50).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: layoutView.bottomAnchor, constant: -60).isActive = true
         imageView.trailingAnchor.constraint(equalTo: layoutView.trailingAnchor).isActive = true
     }
     
     private func createConstraintsDescriptionLabel() {
-        descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 7).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 3).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: layoutView.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: layoutView.trailingAnchor).isActive = true
     }
     
     private func createConstraintsPriceButton() {
-        priceButton.topAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 12).isActive = true
+        priceButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 3).isActive = true
         priceButton.trailingAnchor.constraint(equalTo: layoutView.trailingAnchor, constant: -15).isActive = true
         priceButton.frame.size.width = layoutView.frame.size.width / 2
         
     }
     
     private func createConstraintsWeightLabel() {
-        weightLabel.topAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 15).isActive = true
+        weightLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 7).isActive = true
         weightLabel.leadingAnchor.constraint(equalTo: layoutView.leadingAnchor, constant: 15).isActive = true
         weightLabel.frame.size.width = layoutView.frame.size.width / 2
     }

@@ -64,20 +64,22 @@ class DetailProductView: UIView {
         }
         
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        textView.font = UIFont.systemFont(ofSize: 14, weight: .light)
         textView.textAlignment = .justified
-        textView.text = (product?.productData?.sweetness?.swDescription) ?? "No data"
+        textView.attributedText = NSMutableAttributedString().bold("Описание\n").normal("\(product?.productData?.sweetness?.swDescription ?? "No data")")
         
         productNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        productNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        productNameLabel.lineBreakMode = .byWordWrapping
+        productNameLabel.numberOfLines = 0
+        productNameLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         productNameLabel.text = (product?.productData?.sweetness?.swShortDescription) ?? "No data"
         scrollView.addSubview(productNameLabel)
         
-        manufacturerLabel.font = UIFont.systemFont(ofSize: 9, weight: .light)
-        manufacturerLabel.text = "Производитель: \(product?.productData?.manufacturer?.manName ?? "No data")"
+        manufacturerLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        manufacturerLabel.attributedText = NSMutableAttributedString().bold("Производитель: ").normal("\(product?.productData?.manufacturer?.manName ?? "No data")")
         
-        weightLabel.font = UIFont.systemFont(ofSize:10, weight: .light)
-        weightLabel.text = "Вес: \(product?.productData?.sweetness?.swWeight ?? "No data") грамм"
+        weightLabel.font = UIFont.systemFont(ofSize:16, weight: .light)
+        weightLabel.attributedText = NSMutableAttributedString().bold("Вес: ").normal("\(product?.productData?.sweetness?.swWeight ?? "No data") грамм")
         
         scrollView.addSubview(manufacturerLabel)
         scrollView.addSubview(weightLabel)
@@ -131,13 +133,13 @@ class DetailProductView: UIView {
         }
         
         func makeConstraints() {
-            addToCartButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
-            addToCartButton.frame.size.width = self.frame.size.width / 2
+            addToCartButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+            addToCartButton.frame.size.width = self.frame.size.width / 2 + 30
            // addToCartButton.frame.size.height = self.frame.size.height - 10
-            addToCartButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
-            addToCartButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
+            addToCartButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 9).isActive = true
+            addToCartButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -9).isActive = true
             
-            priceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
+            priceLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
             priceLabel.frame.size.width = self.frame.size.width / 4
             priceLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
             priceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true

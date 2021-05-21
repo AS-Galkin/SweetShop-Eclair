@@ -61,8 +61,8 @@ class SortViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.addSubview(sortTableView)
         view.bringSubviewToFront(sortTableView)
         
-        sortTableView.heightAnchor.constraint(equalToConstant: 130).isActive = true
-        sortTableView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        sortTableView.heightAnchor.constraint(equalToConstant: 160).isActive = true
+        sortTableView.widthAnchor.constraint(equalToConstant: 250).isActive = true
         sortTableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 55).isActive = true
         sortTableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
     }
@@ -72,7 +72,7 @@ class SortViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
+        return 40
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

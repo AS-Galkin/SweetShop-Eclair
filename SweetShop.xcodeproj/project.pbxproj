@@ -21,6 +21,7 @@
 		941A8B932592285500E69CEE /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B922592285500E69CEE /* CategoryViewModel.swift */; };
 		941A8B9B259229D800E69CEE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8B9A259229D800E69CEE /* CategoryView.swift */; };
 		941A8BAC25923BCC00E69CEE /* ExtensionCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A8BAB25923BCC00E69CEE /* ExtensionCategoryView.swift */; };
+		94235A682657AC3B00702159 /* ExtensionNSMutableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94235A672657AC3B00702159 /* ExtensionNSMutableString.swift */; };
 		942AA02926414CBC00E12F18 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA02826414CBC00E12F18 /* LocationViewModel.swift */; };
 		942AA02B26414E3B00E12F18 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA02A26414E3B00E12F18 /* LocationModel.swift */; };
 		942AA02D26416AD700E12F18 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AA02C26416AD700E12F18 /* SortViewController.swift */; };
@@ -124,6 +125,7 @@
 		941A8B922592285500E69CEE /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		941A8B9A259229D800E69CEE /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		941A8BAB25923BCC00E69CEE /* ExtensionCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCategoryView.swift; sourceTree = "<group>"; };
+		94235A672657AC3B00702159 /* ExtensionNSMutableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSMutableString.swift; sourceTree = "<group>"; };
 		942AA02826414CBC00E12F18 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		942AA02A26414E3B00E12F18 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		942AA02C26416AD700E12F18 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				9438DD48264F0FB300E163F0 /* LoadingView.swift */,
 				9438DD4A264F156B00E163F0 /* FailView.swift */,
+				94235A672657AC3B00702159 /* ExtensionNSMutableString.swift */,
 			);
 			path = SatesViewExtension;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				9444684D260E174F002C991F /* ExtensionVerbTableViewController.swift in Sources */,
 				944BA95525F2315700A67FEE /* CartModel.swift in Sources */,
 				945C2EB32595F71A00E6B918 /* ProductViewModel.swift in Sources */,
+				94235A682657AC3B00702159 /* ExtensionNSMutableString.swift in Sources */,
 				941A8B9B259229D800E69CEE /* CategoryView.swift in Sources */,
 				942AA02B26414E3B00E12F18 /* LocationModel.swift in Sources */,
 				94A5F1FF26136D5700A119AD /* MapViewController.swift in Sources */,

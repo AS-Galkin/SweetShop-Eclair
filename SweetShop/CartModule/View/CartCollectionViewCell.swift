@@ -147,6 +147,7 @@ class CartCollectionViewCell: UICollectionViewCell {
             super.init(frame: .zero)
             descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
             descriptionTextView.backgroundColor = UIColor(white: 1, alpha: 0)
+            descriptionTextView.isUserInteractionEnabled = false
             priceLabel.translatesAutoresizingMaskIntoConstraints = false
             priceLabel.font = UIFont(name: "AvenirNext-UltraLight", size: 11.0)
             priceLabel.lineBreakMode = .byWordWrapping

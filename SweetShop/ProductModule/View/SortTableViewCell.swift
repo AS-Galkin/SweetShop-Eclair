@@ -37,13 +37,13 @@ class SortTableViewCell: UITableViewCell {
         addSubview(selectImage)
         addSubview(sortLabel)
         
-        sortLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        sortLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         sortLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
         sortLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2).isActive = true
         selectImage.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         selectImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
-        selectImage.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        selectImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        selectImage.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        selectImage.widthAnchor.constraint(equalToConstant: 25).isActive = true
     }
     
     required init?(coder: NSCoder) {
