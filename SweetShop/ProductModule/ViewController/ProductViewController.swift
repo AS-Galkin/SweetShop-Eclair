@@ -24,6 +24,9 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: Icons.sortIcon.rawValue), style: .plain, target: self, action: #selector(sortButtonHandler))
+        if cartVC == nil {
+            cartVC = CartViewController()
+        }
         downloadJsonData()
         bindCollectionViewDelegate()
     }

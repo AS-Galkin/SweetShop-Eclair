@@ -29,6 +29,7 @@ final class UserViewModel: ViewModelProtocol {
             self.modelData = data
             let decoder = JSONDecoder()
             self.model = try? decoder.decode([UserModel.UserData]?.self, from: data) as [UserModel.UserData]?
+            
         })
         DispatchQueue.main.async {[weak self] in
             if let model = self?.model {

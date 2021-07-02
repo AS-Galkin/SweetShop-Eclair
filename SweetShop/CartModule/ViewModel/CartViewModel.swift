@@ -18,6 +18,9 @@ final class CartViewModel: ViewModelProtocol {
 
     internal var images: [UIImage] = []
     
+    init() {
+        self.productsInCartArray = []
+    }
     
     func downloadData() {
     }
@@ -35,7 +38,7 @@ final class CartViewModel: ViewModelProtocol {
         let _ = try? NetworkLoading.shared().response(urlRequest: request, completion: { (data) in
             self.images = []
             if let jsonCart = try? JSONDecoder().decode([CartModel.CartData].self, from: data) {
-                self.productsInCartArray = []
+                //self.productsInCartArray = []
                 self.productsInCartArray = jsonCart
                 for sweetness in jsonCart {
                     guard let image_name = sweetness.image_name,

@@ -154,20 +154,24 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     
     private func createConstraintsDescriptionLabel() {
-        descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 3).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: layoutView.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: layoutView.trailingAnchor).isActive = true
+        self.descriptionLabel.layoutIfNeeded()
+        if descriptionLabel.frame.size.height > 11 {
+            descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 3).isActive = true
+        }
     }
     
     private func createConstraintsPriceButton() {
-        priceButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 3).isActive = true
+        priceButton.bottomAnchor.constraint(equalTo: layoutView.bottomAnchor, constant: -4).isActive = true
         priceButton.trailingAnchor.constraint(equalTo: layoutView.trailingAnchor, constant: -15).isActive = true
         priceButton.frame.size.width = layoutView.frame.size.width / 2
         
     }
     
     private func createConstraintsWeightLabel() {
-        weightLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 7).isActive = true
+        weightLabel.bottomAnchor.constraint(equalTo: layoutView.bottomAnchor, constant: -15).isActive = true
         weightLabel.leadingAnchor.constraint(equalTo: layoutView.leadingAnchor, constant: 15).isActive = true
         weightLabel.frame.size.width = layoutView.frame.size.width / 2
     }

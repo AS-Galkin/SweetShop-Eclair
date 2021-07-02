@@ -85,7 +85,7 @@ final class ProductViewModel: ViewModelProtocol {
               parentVC?.cartVC?.viewModel.productsInCartArray != nil else {return}
         
         if !searchProduct(&parentVC!.cartVC!.viewModel.productsInCartArray!) {
-            if let request = try? NetworkUploading.shared().request(parameters: ["product_id":product!.product_id, "user_id":parentVC!.cartVC!.userId,
+            if let request = try? NetworkUploading.shared().request(parameters: ["product_id":product!.product_id,                 "user_id":parentVC!.cartVC!.userId,
                                                                                  "amount":product!.amount],
                                                                                  url: URIString.downloadURL.rawValue + URIString.apiInsertCartDataURN.rawValue) {
                 

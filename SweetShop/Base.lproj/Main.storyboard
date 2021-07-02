@@ -917,7 +917,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Low-nk-6vv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-163"/>
+            <point key="canvasLocation" x="1450" y="-884"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="HIC-bG-Mad">

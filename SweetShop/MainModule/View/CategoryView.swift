@@ -65,6 +65,9 @@ final class CategoryView: UIView {
             categoryCollectionView.dataSource = self
             mainSearchBar.delegate = self
         case .loading(let result):
+            if failView.isDescendant(of: self) {
+                failView.removeFromSuperview()
+            }
             addSubview(loadingView)
             break
         case .failure(let result):
